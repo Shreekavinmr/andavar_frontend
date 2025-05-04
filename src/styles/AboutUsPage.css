@@ -369,7 +369,7 @@
   }
   
   .timeline-event.left .timeline-icon {
-    right: -30px;
+    right: -90px;
   }
   
   .timeline-event.right .timeline-icon {
@@ -652,69 +652,7 @@
     color: var(--primary-color);
     font-weight: 500;
   }
-  
-  /* CTA Section */
-  .about-cta-section {
-    position: relative;
-    padding: 7rem 0;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-    color: var(--light-text);
-    overflow: hidden;
-  }
-  
-  .cta-animated-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0 50 Q25 25 50 50 T100 50' stroke='%23ffffff' stroke-width='1' stroke-opacity='0.1' fill='none'/%3E%3C/svg%3E");
-    background-size: 200px;
-    opacity: 0.2;
-  }
-  
-  .cta-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 10;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeIn 1s ease 0.2s forwards;
-  }
-  
-  .cta-content h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-  }
-  
-  .cta-content p {
-    font-size: 1.3rem;
-    margin-bottom: 2.5rem;
-    opacity: 0.9;
-  }
-  
-  .cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1.2rem 2.5rem;
-    background: var(--accent-color);
-    color: var(--text-color);
-    font-weight: 600;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: var(--transition);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    background: var(--primary-color);
-  }
+
   
   /* Responsive Styles */
   @media (max-width: 1200px) {
@@ -796,6 +734,54 @@
       height: 160px;
     }
   }
+
+  @media (max-width: 768px) {
+    .timeline-container {
+        padding: 1rem;
+    }
+
+    .timeline-line {
+        left: 30px; /* Move the line to the left side */
+        transform: none; /* Remove centering transform */
+    }
+
+    .timeline-event {
+        width: 100%; /* Full width for events */
+        padding: 0 0 0 60px; /* Padding to align with the line */
+        margin-bottom: 3rem; /* Reduce margin for tighter layout */
+        left: 0 !important; /* Override left/right positioning */
+    }
+
+    .timeline-event.left,
+    .timeline-event.right {
+        padding-left: 60px; /* Consistent padding for all events */
+        padding-right: 20px; /* Add some right padding for content */
+    }
+
+    .timeline-icon {
+        left: 0; /* Position icon at the start of the event */
+        width: 40px; /* Smaller icon for mobile */
+        height: 40px;
+    }
+
+    .timeline-event.left .timeline-icon,
+    .timeline-event.right .timeline-icon {
+        left: 0; /* Align icons with the timeline line */
+        right: auto; /* Override desktop positioning */
+    }
+
+    .timeline-content {
+        padding: 1.5rem; /* Reduce padding for smaller screens */
+    }
+
+    .timeline-content h3 {
+        font-size: 1.5rem; /* Slightly smaller heading */
+    }
+
+    .timeline-content p {
+        font-size: 1rem; /* Slightly smaller text */
+    }
+}
   
   @media (max-width: 576px) {
     .clinical-hero-section {

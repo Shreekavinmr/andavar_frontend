@@ -656,6 +656,7 @@ body {
   position: relative;
   background: url('../../public/assets/images/consult_form_bg.jpg') no-repeat center center;
   background-size: cover;
+  background-attachment: fixed;
   color: white;
   text-align: center;
   overflow: hidden;
