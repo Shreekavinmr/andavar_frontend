@@ -278,7 +278,7 @@
   }
   
   @media (max-width: 992px) {
-        .container {
+        .container-1 {
         flex-direction: column;
         }
     
