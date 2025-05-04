@@ -74,44 +74,41 @@ const HomePage = () => {
   return (
     <div className="homepage">
       <section className="hero-section">
-        <div className="hero-content">
-          <div className="container">
-            <div className="hero-text-container">
-              <div className="hero-text">
-                <h1>Accelerating Medical Breakthroughs Worldwide</h1>
-                <p>V&S Global Solutions delivers innovative and reliable clinical research services to advance healthcare outcomes and improve patient lives.</p>
-                <div className="hero-buttons">
-                  <a href="/services" className="primary-button">
-                    Our Services
-                    <ArrowRight size={20} />
-                  </a>
-                  <a href="/contact" className="secondary-button">Contact Us</a>
-                </div>
-              </div>
-            </div>
-            <div className="hero-images-overlay">
-              <div className="image-overlay image-1">
-                <img src="/assets/images/vs_2.jpg" alt="Laboratory researcher" />
-              </div>
-              <div className="image-overlay image-2">
-                <img src="/assets/images/vs_3.jpg" alt="Clinical research meeting" />
-              </div>
-              <div className="image-overlay image-3">
-                <img src="/assets/images/vs_1.jpg" alt="Clinical research meeting" />
-              </div>
-            </div>
-          </div>
-          <div className="decorative-elements">
-            <div className="circle-1"></div>
-            <div className="circle-2"></div>
-            <div className="circle-3"></div>
-            <div className="dots-1"></div>
-            <div className="dots-2"></div>
-            <div className="glow-1"></div>
-            <div className="glow-2"></div>
+  <div className="hero-content">
+    <div className="container-1">
+      <div className="hero-text-container">
+        <div className="hero-text">
+          <h1>Accelerating Medical Breakthroughs Worldwide</h1>
+          <p>V&S Global Solutions delivers innovative and reliable clinical research services to advance healthcare outcomes and improve patient lives.</p>
+          <div className="hero-buttons">
+            <a href="/services" className="primary-button">
+              Our Services
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-arrow-right">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="/contact" className="secondary-button">Contact Us</a>
           </div>
         </div>
-      </section>
+      </div>
+      
+      <div className="hero-image-container">
+        <img src="/assets/images/vs_2.jpg" alt="Laboratory researcher" className="hero-image" />
+        <div className="border-frame-1"></div>
+        <div className="border-frame-2"></div>
+      </div>
+    </div>
+    
+    <div className="decorative-elements">
+      <div className="circle-1"></div>
+      <div className="circle-2"></div>
+      <div className="circle-3"></div>
+      <div className="dots-1"></div>
+      <div className="dots-2"></div>
+    </div>
+  </div>
+</section>
 
       <section className="about-preview-section">
         <div className="animated-bg about-animated-bg">

@@ -734,54 +734,7 @@
       height: 160px;
     }
   }
-
-  @media (max-width: 768px) {
-    .timeline-container {
-        padding: 1rem;
-    }
-
-    .timeline-line {
-        left: 30px; /* Move the line to the left side */
-        transform: none; /* Remove centering transform */
-    }
-
-    .timeline-event {
-        width: 100%; /* Full width for events */
-        padding: 0 0 0 60px; /* Padding to align with the line */
-        margin-bottom: 3rem; /* Reduce margin for tighter layout */
-        left: 0 !important; /* Override left/right positioning */
-    }
-
-    .timeline-event.left,
-    .timeline-event.right {
-        padding-left: 60px; /* Consistent padding for all events */
-        padding-right: 20px; /* Add some right padding for content */
-    }
-
-    .timeline-icon {
-        left: 0; /* Position icon at the start of the event */
-        width: 40px; /* Smaller icon for mobile */
-        height: 40px;
-    }
-
-    .timeline-event.left .timeline-icon,
-    .timeline-event.right .timeline-icon {
-        left: 0; /* Align icons with the timeline line */
-        right: auto; /* Override desktop positioning */
-    }
-
-    .timeline-content {
-        padding: 1.5rem; /* Reduce padding for smaller screens */
-    }
-
-    .timeline-content h3 {
-        font-size: 1.5rem; /* Slightly smaller heading */
-    }
-
-    .timeline-content p {
-        font-size: 1rem; /* Slightly smaller text */
-    }
-}
+  
   
   @media (max-width: 576px) {
     .clinical-hero-section {

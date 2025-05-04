@@ -10,7 +10,7 @@
 }
 
 .site-header.scrolled {
-    background-color: rgba(236, 240, 241, 0.98); /* Soft White with opacity */
+    background-color: rgba(236, 240, 241, 0.98); 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     padding: 12px 0;
     backdrop-filter: blur(10px);
@@ -46,7 +46,7 @@
 
 /* Logo color changes when scrolled and when not scrolled */
 .site-header:not(.scrolled) .logo .primary {
-    color: #ECF0F1; /* Soft White */
+    color: #2C3E50; /* Soft White */
 }
 
 .logo .secondary {
@@ -57,7 +57,7 @@
 }
 
 .site-header:not(.scrolled) .logo .secondary {
-    color: rgba(236, 240, 241, 0.7); /* Soft White with opacity */
+    color: #2C3E50; /* Soft White with opacity */
 }
 
 /* Desktop Navigation */
@@ -91,7 +91,7 @@
 }
 
 .site-header:not(.scrolled) .nav-link {
-    color: #ECF0F1; /* Soft White */
+    color: #2C3E50; /* Soft White */
 }
 
 .nav-link:hover {
@@ -265,7 +265,7 @@
 }
 
 .mobile-submenu-link:hover {
-    color: #3498DB; /* Bright Blue */
+    color: #2C3E50; /* Bright Blue */
 }
 
 /* Responsive Design */
