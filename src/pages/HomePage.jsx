@@ -73,39 +73,64 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      <section className="hero-section">
-  <div className="hero-content">
-    <div className="container-1">
-      <div className="hero-text-container">
-        <div className="hero-text">
-          <h1>Accelerating Medical Breakthroughs Worldwide</h1>
-          <p>V&S Global Solutions delivers innovative and reliable clinical research services to advance healthcare outcomes and improve patient lives.</p>
-          <div className="hero-buttons">
-            <a href="/services" className="primary-button">
-              Our Services
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-arrow-right">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-            <a href="/contact" className="secondary-button">Contact Us</a>
+      <section class="hero-section">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="dots-pattern dots-1"></div>
+  <div class="dots-pattern dots-2"></div>
+  
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          </svg>
+          Advancing Global Health
+        </div>
+        
+        <h1>Accelerating Medical Breakthroughs Worldwide</h1>
+        <p>V&S Global Solutions delivers innovative and reliable clinical research services to advance healthcare outcomes and improve patient lives across the globe.</p>
+        
+        <div class="hero-buttons">
+          <a href="/services" class="button primary-button">
+            Explore Our Services
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="/contact" class="button secondary-button">Contact Us</a>
+        </div>
+        
+        <div class="hero-stats">
+          
+          <div class="stat-item">
+          </div>
+          <div class="stat-item">
           </div>
         </div>
       </div>
       
-      <div className="hero-image-container">
-        <img src="/assets/images/vs_2.jpg" alt="Laboratory researcher" className="hero-image" />
-        <div className="border-frame-1"></div>
-        <div className="border-frame-2"></div>
+      <div class="image-grid">
+        <div class="image-plus">
+          <div class="image-item">
+            <img src="assets/images/vs_2.jpg" alt="Primary clinical research" />
+          </div>
+          <div class="image-item">
+            <img src="assets/images/vs_6.jpeg" alt="Modern medical equipment" />
+          </div>
+          <div class="image-item">
+            <img src="assets/images/vs_3.jpg" alt="Team collaboration" />
+          </div>
+          <div class="image-item">
+            <img src="assets/images/vs_4.jpg" alt="Clinical trial process" />
+          </div>
+          <div class="image-item">
+            <img src="assets/images/vs_7.jpg" alt="Global healthcare innovation" />
+          </div>
+        </div>
       </div>
-    </div>
-    
-    <div className="decorative-elements">
-      <div className="circle-1"></div>
-      <div className="circle-2"></div>
-      <div className="circle-3"></div>
-      <div className="dots-1"></div>
-      <div className="dots-2"></div>
     </div>
   </div>
 </section>
