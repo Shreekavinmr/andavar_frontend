@@ -300,3 +300,12 @@
 .site-header.scrolled {
     animation: fadeIn 0.4s ease forwards;
 }
+
+/* Logo color changes when mobile menu is open */
+.site-header.menu-open .logo .primary {
+    color: #2C3E50; /* Deep Slate Blue, or choose your preferred color */
+}
+
+.site-header.menu-open .logo .secondary {
+    color: #2C3E50; /* Deep Slate Blue, or choose your preferred color */
+}
