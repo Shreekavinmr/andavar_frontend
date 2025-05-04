@@ -46,7 +46,7 @@ const Header = () => {
   ];
 
   return (
-    <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`site-header ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`}>
       <div className="header-container">
         <div className="logo-container">
           <a href="/" className="logo">

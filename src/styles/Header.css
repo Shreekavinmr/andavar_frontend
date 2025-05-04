@@ -51,7 +51,7 @@
 
 .logo .secondary {
     font-size: 0.75rem;
-    color: #2C3E50; /* Soft White with opacity */
+    color: #2C3E50; /* Deep Slate Blue */
     letter-spacing: 0.5px;
     margin-top: -2px;
 }
@@ -165,10 +165,24 @@
     z-index: 1001;
     padding: 6px;
     border-radius: 4px;
+    opacity: 1;
+    position: relative;
 }
 
+/* Ensure icon is visible when header is not scrolled */
 .site-header:not(.scrolled) .mobile-menu-toggle {
     color: #ECF0F1; /* Soft White */
+}
+
+/* Black color for X icon when mobile menu is open */
+.site-header.menu-open .mobile-menu-toggle {
+    color: #000000; /* Black */
+}
+
+/* Ensure SVG icon stroke is updated */
+.site-header.menu-open .mobile-menu-toggle svg {
+    stroke: #000000; /* Black */
+    fill: none;
 }
 
 /* Mobile Navigation */
@@ -245,7 +259,7 @@
     display: block;
     padding: 10px 0;
     font-size: 0.95rem;
-    color: rgba(236, 240, 241, 0.7); /* Soft White with opacity */
+    color: rgba(44, 62, 80, 0.7); /* Deep Slate Blue with opacity */
     text-decoration: none;
     transition: all 0.2s ease;
 }
