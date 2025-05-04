@@ -1,9 +1,8 @@
 import React from 'react';
-import { ArrowRight} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import '../styles/HomePage.css';
 import AnimatedServicesSection from './AnimatedServicesSection ';
 
-// StatCounter component remains unchanged
 const StatCounter = ({ number, label }) => {
   const [count, setCount] = React.useState(0);
   const ref = React.useRef(null);
@@ -73,30 +72,25 @@ const HomePage = () => {
     },
   ];
 
-  // Sample partner logos (replace with actual logo paths)
   const partners = [
-    { name: "erode cancel center", logo: "/assets/images/scroll_1.png" },
-    { name: "imed speciality hospital", logo: "/assets/images/scroll_2.jpeg" },
-    { name: "bangalore cancer center", logo: "/assets/images/scroll_3.jpeg" },
-    { name: "universal cancel hospital", logo: "/assets/images/scroll_4.png" },
-    { name: "sri narayani hospital and research", logo: "/assets/images/scroll_5.jpg" },
+    { name: "Erode Cancer Center", logo: "/assets/images/scroll_1.png" },
+    { name: "IMed Speciality Hospital", logo: "/assets/images/scroll_2.jpeg" },
+    { name: "Bangalore Cancer Center", logo: "/assets/images/scroll_3.jpeg" },
+    { name: "Universal Cancer Hospital", logo: "/assets/images/scroll_4.png" },
+    { name: "Sri Narayani Hospital and Research", logo: "/assets/images/scroll_5.jpg" },
   ];
 
-  // State for current testimonial index
   const [currentIndex, setCurrentIndex] = React.useState(0);
 
-  // Auto-scroll effect for testimonials
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 5000); // Change testimonial every 5 seconds
-
-    return () => clearInterval(interval); // Cleanup on unmount
+    }, 5000);
+    return () => clearInterval(interval);
   }, [testimonials.length]);
 
   return (
     <div className="homepage">
-      {/* Hero Section remains unchanged */}
       <section className="hero-section">
         <div className="hero-content">
           <div className="container">
@@ -115,13 +109,13 @@ const HomePage = () => {
             </div>
             <div className="hero-images-overlay">
               <div className="image-overlay image-1">
-                <img src="assets/images/vs_2.jpg" alt="Laboratory researcher" />
+                <img src="/assets/images/vs_2.jpg" alt="Laboratory researcher" />
               </div>
               <div className="image-overlay image-2">
-                <img src="assets/images/vs_3.jpg" alt="Clinical research meeting" />
+                <img src="/assets/images/vs_3.jpg" alt="Clinical research meeting" />
               </div>
               <div className="image-overlay image-3">
-                <img src="assets/images/vs_1.jpg" alt="Clinical research meeting" />
+                <img src="/assets/images/vs_1.jpg" alt="Clinical research meeting" />
               </div>
             </div>
           </div>
@@ -139,7 +133,6 @@ const HomePage = () => {
 
       <AnimatedServicesSection />
 
-      {/* Stats Section remains unchanged */}
       <section className="stats-section">
         <div className="container">
           <div className="stats-grid">
@@ -150,7 +143,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* About Preview Section remains unchanged */}
       <section className="about-preview-section">
         <div className="animated-bg about-animated-bg">
           <div className="about-dots-l1"></div>
@@ -167,8 +159,8 @@ const HomePage = () => {
             </div>
             <div className="about-text">
               <h2>Who We Are</h2>
-              <p>V&S Global Solutions is an integrated clinical research solution for pharmaceutical, ayurveda, biotechnology companies and medical device producers. We have a long track record of evaluating the safety and efficacy of drugs and medical devices across a wide range of therapeutic indications.</p>
-              <p>V&S Global Solutions operates in adherence to national and international regulatory requirements. Our centers are in compliance with ICH-GCP and other applicable regulatory guidelines. We focus on quality delivery of clinical trials to our client’s by implementing various strategies and focus to ensure timely execution of clinical projects within the budget.</p>
+              <p>V&S Global Solutions is an integrated clinical research solution for pharmaceutical, ayurveda, biotechnology companies, and medical device producers. We have a long track record of evaluating the safety and efficacy of drugs and medical devices across a wide range of therapeutic indications.</p>
+              <p>V&S Global Solutions operates in adherence to national and international regulatory requirements. Our centers are in compliance with ICH-GCP and other applicable regulatory guidelines. We focus on quality delivery of clinical trials to our clients by implementing various strategies and focus to ensure timely execution of clinical projects within the budget.</p>
               <a href="/about" className="about-link">
                 More About Us <ArrowRight size={16} />
               </a>
@@ -177,7 +169,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* CTA Section remains unchanged */}
       <section className="cta-section">
         <div className="animated-bg cta-animated-bg">
           <div className="cta-telescope cta-telescope-1"></div>
@@ -206,7 +197,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Testimonial Section remains unchanged */}
       <section className="testimonial-section">
         <div className="animated-bg testimonial-animated-bg">
           <div className="testimonial-dots-l1"></div>
@@ -248,7 +238,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* New Partners Section */}
       <section className="partners-section">
         <div className="container">
           <div className="section-header">
