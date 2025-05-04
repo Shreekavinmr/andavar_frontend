@@ -167,7 +167,7 @@
   }
   
   .clinical-hero-text h1 {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     font-weight: 800;
     line-height: 1.1;
     background: linear-gradient(90deg, #ffffff, #eba7ac);
@@ -191,7 +191,7 @@
   }
   
   .clinical-hero-text p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1rem;
@@ -783,7 +783,7 @@
     }
   
     .clinical-hero-text h1 {
-      font-size: 3.5rem;
+      font-size: 2rem;
     }
   
     .dna-helix-1 {
@@ -807,11 +807,11 @@
     }
   
     .clinical-hero-text h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
   
     .clinical-hero-text p {
-      font-size: 1.2rem;
+      font-size: 0.9rem;
     }
   
     .section-header p {
