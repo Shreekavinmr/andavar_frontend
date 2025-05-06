@@ -120,7 +120,7 @@ const AnimatedServicesSection = () => {
           variants={headerVariants}
         >
           <h2>Our Clinical Research Services</h2>
-          <p>The clinical trial developmental process is riddled with complexity and risk, which can cost your organization significant time and money. Gs Biosolutions offers a variety of clinical research services that bring together our clinical and regulatory expertise with new technologies to simplify your journey to the market. It all begins with our integrated services in conducting clinical research including.</p>
+          <p>The clinical trial developmental process is riddled with complexity and risk, which can cost your organization significant time and money. V&S Global Solutions offers a variety of clinical research services that bring together our clinical and regulatory expertise with new technologies to simplify your journey to the market. It all begins with our integrated services in conducting clinical research including.</p>
         </motion.div>
         
         <motion.div 

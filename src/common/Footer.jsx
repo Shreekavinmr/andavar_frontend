@@ -92,7 +92,7 @@ const Footer = () => {
         <div className="footer-top">
           <div className="footer-column footer-info">
             <div className="footer-logo">
-              <span className="footer-logo-text">GS Biosolutions</span>
+              <span className="footer-logo-text">V&S Global Solutions</span>
             </div>
             <p className="footer-tagline">
               Advancing Clinical Research For a Healthier Tomorrow
@@ -192,7 +192,7 @@ const Footer = () => {
               </li>
               <li className="contact-item">
                 <Mail size={16} />
-                <a href="mailto:contact@gsbiosolutions.com">contact@gsbiosolutions.com</a>
+                <a href="mailto:contact@gsbiosolutions.com">contact@vsglobalsolutions.com</a>
               </li>
             </ul>
           </div>
@@ -200,7 +200,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <div className="copyright">
-            © {new Date().getFullYear()} GS Biosolutions. All rights reserved.
+            © {new Date().getFullYear()} V&S Global Solutions. All rights reserved.
           </div>
           <div className="footer-legal">
             <a href="/privacy-policy" className="legal-link">

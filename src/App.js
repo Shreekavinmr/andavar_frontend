@@ -6,6 +6,9 @@ import Header from './common/Header';
 import Footer from './common/Footer';
 import HomePage from './pages/HomePage';
 import AboutUsPage from './pages/AboutUsPage';
+import CoursesPage from './pages/CoursesPage';
+import TherapeuticAreasPage from './pages/TherapeuticAreasPage';
+import CareersPage from './pages/Careers';
 
 // Import styles
 import './App.css';
@@ -18,6 +21,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutUsPage />} />
+          <Route path="/courses" element={<CoursesPage/>} />
+          <Route path='/therapeutic-areas' element={<TherapeuticAreasPage/>}/>
+          <Route path='/careers' element={<CareersPage/>}/>
         </Routes>
         <Footer />
       </div>
