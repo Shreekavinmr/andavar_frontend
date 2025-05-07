@@ -1,7 +1,6 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Loader } from 'lucide-react';
 import '../styles/CareersPage.css';
-
 
 const BenefitCard = ({ title, description, icon }) => {
   return (
@@ -14,6 +13,14 @@ const BenefitCard = ({ title, description, icon }) => {
 };
 
 const CareersPage = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    coverLetter: ''
+  });
+  const [resumeFile, setResumeFile] = useState(null);
+  const [status, setStatus] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const benefits = [
     {
@@ -107,6 +114,54 @@ const CareersPage = () => {
     },
   ];
 
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  const handleFileChange = (e) => {
+    setResumeFile(e.target.files[0]);
+  };
+
+  const handleSubmit = async () => {
+    if (!formData.fullName || !formData.email || !resumeFile) {
+      setStatus('Please fill all required fields.');
+      return;
+    }
+
+    setIsLoading(true);
+    setStatus('');
+
+    const formDataToSend = new FormData();
+    formDataToSend.append('fullName', formData.fullName);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('coverLetter', formData.coverLetter);
+    formDataToSend.append('resume', resumeFile);
+    formDataToSend.append('secretKey', 'fghjnwri7653r2rghjebfh'); 
+
+    try {
+      const response = await fetch('http://localhost:5000/api/apply', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        setStatus('Application submitted successfully!');
+        setFormData({ fullName: '', email: '', coverLetter: '' });
+        setResumeFile(null);
+        document.getElementById('resume').value = ''; // Reset file input
+      } else {
+        setStatus(`Error: ${result.message}`);
+      }
+    } catch (error) {
+      setStatus('Error submitting application. Please try again.');
+      console.error('Submission error:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="careers-page">
       <section className="hero-section">
@@ -134,7 +189,7 @@ const CareersPage = () => {
             </div>
             <h1>Welcome to Your Journey at V&S Global Solutions</h1>
             <p>
-              If you’re passionate about making a lasting impact in clinical research and shaping sustainable health solutions, V&S Global Solutions offers a dynamic environment to hone your skills and grow your career.
+              If you're passionate about making a lasting impact in clinical research and shaping sustainable health solutions, V&S Global Solutions offers a dynamic environment to hone your skills and grow your career.
             </p>
           </div>
         </div>
@@ -167,54 +222,105 @@ const CareersPage = () => {
         </div>
         <div className="container">
           <div className="apply-content">
-            <h2>Apply Now</h2>
-            <p>Ready to join our team? Fill out the form below to submit your application.</p>
+            <h-behavior
+              actions="fadeIn: { duration: 1s, easing: ease-out }"
+              trigger="visible"
+            >
+              <h2>Apply Now</h2>
+            </h-behavior>
+            <h-behavior
+              actions="fadeIn: { duration: 1s, easing: ease-out, delay: 0.2s }"
+              trigger="visible"
+            >
+              <p>Ready to join our team? Fill out the form below to submit your application.</p>
+            </h-behavior>
             <div className="apply-form">
               <div className="form-group">
                 <label htmlFor="fullName">Full Name</label>
-                <input type="text" id="fullName" placeholder="Enter your full name" required />
+                <input
+                  type="text"
+                  id="fullName"
+                  placeholder="Enter your full name"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  disabled={isLoading}
+                  required
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required />
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter your email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  disabled={isLoading}
+                  required
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="resume">Upload Resume</label>
-                <input type="file" id="resume" accept=".pdf,.doc,.docx" required />
+                <input
+                  type="file"
+                  id="resume"
+                  accept=".pdf,.doc,.docx"
+                  onChange={handleFileChange}
+                  disabled={isLoading}
+                  required
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="coverLetter">Cover Letter (Optional)</label>
-                <textarea id="coverLetter" placeholder="Tell us why you're a great fit" />
+                <textarea
+                  id="coverLetter"
+                  placeholder="Tell us why you're a great fit"
+                  value={formData.coverLetter}
+                  onChange={handleInputChange}
+                  disabled={isLoading}
+                />
               </div>
-              <button type="submit" className="submit-button">
-                Submit Application <ArrowRight size={18} />
+              <button 
+                className={`submit-button ${isLoading ? 'loading' : ''}`} 
+                onClick={handleSubmit}
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <Loader size={18} className="loading-icon" />
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    Submit Application <ArrowRight size={18} />
+                  </>
+                )}
               </button>
+              {status && <p className={`form-status ${status.includes('Error') ? 'error' : 'success'}`}>{status}</p>}
             </div>
           </div>
         </div>
       </section>
 
       <section className="contact-section">
-      <div className="container">
-        <div className="contact-content">
-          {/* L-shaped dotted corners */}
-          <div className="corner corner-tl"></div>
-          <div className="corner corner-tr"></div>
-          <div className="corner corner-bl"></div>
-          <div className="corner corner-br"></div>
-          
-          <h2>Contact Our HR Team</h2>
-          <p>
-            For inquiries about job openings or the application process, reach us at{' '}
-            <a href="mailto:hr@vsglobalsolutions.com">hr@vsglobalsolutions.com</a> or call{' '}
-            <a href="tel:+919074047489">+91 9074047489</a>.
-          </p>
-          <p>
-            <strong>Office Address:</strong> 8MFC+MQ8, Maruthi Nagar, Thindal, Erode, Tamil Nadu 638012
-          </p>
+        <div className="container">
+          <div className="contact-content">
+            <div className="corner corner-tl"></div>
+            <div className="corner corner-tr"></div>
+            <div className="corner corner-bl"></div>
+            <div className="corner corner-br"></div>
+            <h2>Contact Our HR Team</h2>
+            <p>
+              For inquiries about job openings or the application process, reach us at{' '}
+              <a href="mailto:hr@vsglobalsolutions.com">hr@vsglobalsolutions.com</a> or call{' '}
+              <a href="tel:+919074047489">+91 9074047489</a>.
+            </p>
+            <p>
+              <strong>Office Address:</strong> 8MFC+MQ8, Maruthi Nagar, Thindal, Erode, Tamil Nadu 638012
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   );
 };
