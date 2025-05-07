@@ -31,10 +31,27 @@
 
 .logo {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     text-decoration: none;
     position: relative;
     z-index: 2;
+}
+
+.logo-image {
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.company-logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
 }
 
 .logo .primary {
@@ -42,11 +59,12 @@
     font-weight: 700;
     color: #2C3E50; /* Deep Slate Blue */
     letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 
 /* Logo color changes when scrolled and when not scrolled */
 .site-header:not(.scrolled) .logo .primary {
-    color: #2C3E50; /* Soft White */
+    color: #2C3E50; /* Deep Slate Blue */
 }
 
 .logo .secondary {
@@ -57,7 +75,7 @@
 }
 
 .site-header:not(.scrolled) .logo .secondary {
-    color: #2C3E50; /* Soft White with opacity */
+    color: #2C3E50; /* Deep Slate Blue */
 }
 
 /* Desktop Navigation */
@@ -91,7 +109,7 @@
 }
 
 .site-header:not(.scrolled) .nav-link {
-    color: #2C3E50; /* Soft White */
+    color: #2C3E50; /* Deep Slate Blue */
 }
 
 .nav-link:hover {
@@ -111,15 +129,15 @@
     transform: rotate(180deg);
 }
 
-/* Submenu Styling */
+/* Pink-themed Submenu Styling */
 .submenu {
     position: absolute;
     top: 100%;
     left: 0;
     min-width: 220px;
-    background-color: #ECF0F1; /* Soft White */
+    background-color: #FFF0F5; /* Light Pink Background */
     border-radius: 6px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(219, 112, 147, 0.15); /* Pink Shadow */
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -128,6 +146,7 @@
     overflow: hidden;
     list-style: none;
     padding: 8px 0;
+    border: 1px solid #FFB6C1; /* Light Pink Border */
 }
 
 .submenu.active {
@@ -144,14 +163,14 @@
     display: block;
     padding: 10px 16px;
     text-decoration: none;
-    color: #2C3E50; /* Deep Slate Blue */
+    color: #DB7093; /* Pink Color */
     font-size: 0.9rem;
     transition: all 0.2s ease;
 }
 
 .submenu-link:hover {
-    background-color: rgba(0, 0, 0, 0.03);
-    color: #3498DB; /* Bright Blue */
+    background-color: rgba(219, 112, 147, 0.1); /* Light Pink Background on Hover */
+    color: #C71585; /* Darker Pink on Hover */
     padding-left: 22px;
 }
 
@@ -171,7 +190,7 @@
 
 /* Ensure icon is visible when header is not scrolled */
 .site-header:not(.scrolled) .mobile-menu-toggle {
-    color: #ECF0F1; /* Soft White */
+    color: #2C3E50; /* Deep Slate Blue */
 }
 
 /* Black color for X icon when mobile menu is open */
@@ -237,6 +256,7 @@
     transform: rotate(180deg);
 }
 
+/* Pink-themed Mobile Submenu */
 .mobile-submenu {
     list-style: none;
     padding: 0 0 0 16px;
@@ -244,11 +264,15 @@
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s ease;
+    background-color: #FFF0F5; /* Light Pink Background */
+    border-radius: 4px;
 }
 
 .mobile-submenu.active {
     max-height: 500px;
     margin-bottom: 12px;
+    padding: 8px 0;
+    border-left: 2px solid #DB7093; /* Pink Border */
 }
 
 .mobile-submenu-item {
@@ -257,15 +281,16 @@
 
 .mobile-submenu-link {
     display: block;
-    padding: 10px 0;
+    padding: 10px 12px;
     font-size: 0.95rem;
-    color: rgba(44, 62, 80, 0.7); /* Deep Slate Blue with opacity */
+    color: #DB7093; /* Pink Color */
     text-decoration: none;
     transition: all 0.2s ease;
 }
 
 .mobile-submenu-link:hover {
-    color: #2C3E50; /* Bright Blue */
+    color: #C71585; /* Darker Pink on Hover */
+    background-color: rgba(219, 112, 147, 0.1); /* Light Pink Background */
 }
 
 /* Responsive Design */
@@ -282,6 +307,19 @@
 
     .mobile-nav {
         display: block;
+    }
+    
+    .logo-text .primary {
+        font-size: 1.2rem;
+    }
+    
+    .logo-text .secondary {
+        font-size: 0.7rem;
+    }
+    
+    .company-logo {
+        width: 35px;
+        height: 35px;
     }
 }
 
@@ -303,9 +341,9 @@
 
 /* Logo color changes when mobile menu is open */
 .site-header.menu-open .logo .primary {
-    color: #2C3E50; /* Deep Slate Blue, or choose your preferred color */
+    color: #2C3E50; /* Deep Slate Blue */
 }
 
 .site-header.menu-open .logo .secondary {
-    color: #2C3E50; /* Deep Slate Blue, or choose your preferred color */
+    color: #2C3E50; /* Deep Slate Blue */
 }

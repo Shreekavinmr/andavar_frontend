@@ -22,8 +22,35 @@ const Header = () => {
   }, [scrolled]);
 
   const toggleSubmenu = (index) => {
+    // If clicking the same menu item, close it; otherwise open the new one
     setActiveSubmenu(activeSubmenu === index ? null : index);
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Close submenu when clicking outside
+      if (activeSubmenu !== null) {
+        const dropdowns = document.querySelectorAll('.has-submenu');
+        let clickedOutside = true;
+        
+        dropdowns.forEach(dropdown => {
+          if (dropdown.contains(event.target)) {
+            clickedOutside = false;
+          }
+        });
+        
+        if (clickedOutside) {
+          setActiveSubmenu(null);
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [activeSubmenu]);
 
   const navItems = [
     { title: 'Home', link: '/' },
@@ -50,8 +77,14 @@ const Header = () => {
       <div className="header-container">
         <div className="logo-container">
           <a href="/" className="logo">
-            <span className="primary">V&S Global Solutions</span>
-            <span className="secondary">Clinical Excellence</span>
+            <div className="logo-image">
+              {/* Replace with your actual logo path */}
+              <img src="/assets/images/logo.png" alt="V&S Logo" className="company-logo" />
+            </div>
+            <div className="logo-text">
+              <span className="primary">V&S Global Solutions</span>
+              <span className="secondary">Clinical Excellence</span>
+            </div>
           </a>
         </div>
 
@@ -67,6 +100,7 @@ const Header = () => {
                     e.preventDefault();
                     toggleSubmenu(index);
                   } : undefined}
+                  onMouseEnter={item.submenu ? () => toggleSubmenu(index) : undefined}
                 >
                   {item.title}
                   {item.submenu && (
@@ -75,7 +109,9 @@ const Header = () => {
                 </a>
                 
                 {item.submenu && (
-                  <ul className={`submenu ${activeSubmenu === index ? 'active' : ''}`}>
+                  <ul 
+                    className={`submenu ${activeSubmenu === index ? 'active' : ''}`}
+                  >
                     {item.submenu.map((subItem, subIndex) => (
                       <li key={subIndex} className="submenu-item">
                         <a href={subItem.link} className="submenu-link">
