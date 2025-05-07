@@ -7,12 +7,10 @@ const Footer = () => {
   const bubbleRefs = useRef([]);
 
   useEffect(() => {
-    // Create animated bubbles in the footer
     const createBubbles = () => {
       const footer = footerRef.current;
       if (!footer) return;
 
-      // Clear existing bubbles
       bubbleRefs.current.forEach(bubble => {
         if (bubble && bubble.parentElement) {
           bubble.parentElement.removeChild(bubble);
@@ -20,32 +18,26 @@ const Footer = () => {
       });
       bubbleRefs.current = [];
 
-      // Create new bubbles
       const bubbleCount = 12;
       for (let i = 0; i < bubbleCount; i++) {
         const bubble = document.createElement('div');
         bubble.className = 'footer-bubble';
 
-        // Random size between 30px and 100px
         const size = Math.floor(Math.random() * 70) + 30;
         bubble.style.width = `${size}px`;
         bubble.style.height = `${size}px`;
 
-        // Random position within footer bounds
         const posX = Math.random() * 100;
         const posY = Math.random() * 100;
         bubble.style.left = `${posX}%`;
         bubble.style.bottom = `${posY}%`;
 
-        // Random opacity
         const opacity = Math.random() * 0.15 + 0.05;
         bubble.style.opacity = opacity;
 
-        // Random animation duration between 15s and 25s
         const duration = Math.random() * 10 + 15;
         bubble.style.animationDuration = `${duration}s`;
 
-        // Random animation delay
         const delay = Math.random() * 5;
         bubble.style.animationDelay = `${delay}s`;
 
@@ -56,7 +48,6 @@ const Footer = () => {
 
     createBubbles();
 
-    // Recreate bubbles on window resize with debounce
     let resizeTimeout;
     const handleResize = () => {
       clearTimeout(resizeTimeout);
@@ -67,7 +58,6 @@ const Footer = () => {
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      // Cleanup bubbles on component unmount
       bubbleRefs.current.forEach(bubble => {
         if (bubble && bubble.parentElement) {
           bubble.parentElement.removeChild(bubble);
@@ -92,6 +82,11 @@ const Footer = () => {
         <div className="footer-top">
           <div className="footer-column footer-info">
             <div className="footer-logo">
+              <img
+                src="/assets/images/logo.png"
+                alt="V&S Global Solutions Logo"
+                className="footer-logo-image"
+              />
               <span className="footer-logo-text">V&S Global Solutions</span>
             </div>
             <p className="footer-tagline">
@@ -102,62 +97,22 @@ const Footer = () => {
           <div className="footer-column footer-links">
             <h3 className="footer-heading">Quick Links</h3>
             <ul className="footer-nav">
-              <li>
-                <a href="/about" className="footer-link">
-                  About Us <ArrowUpRight size={14} />
-                </a>
-              </li>
-              <li>
-                <a href="/services" className="footer-link">
-                  Services <ArrowUpRight />
-                </a>
-              </li>
-              <li>
-                <a href="/courses" className="footer-link">
-                  Courses <ArrowUpRight size={14} />
-                </a>
-              </li>
-              <li>
-                <a href="/therapeutic-areas" className="footer-link">
-                  Therapeutic Areas <ArrowUpRight size={14} />
-                </a>
-              </li>
-              <li>
-                <a href="/careers" className="footer-link">
-                  Careers <ArrowUpRight size={14} />
-                </a>
-              </li>
+              <li><a href="/about" className="footer-link">About Us <ArrowUpRight size={14} /></a></li>
+              <li><a href="/services" className="footer-link">Services <ArrowUpRight /></a></li>
+              <li><a href="/courses" className="footer-link">Courses <ArrowUpRight size={14} /></a></li>
+              <li><a href="/therapeutic-areas" className="footer-link">Therapeutic Areas <ArrowUpRight size={14} /></a></li>
+              <li><a href="/careers" className="footer-link">Careers <ArrowUpRight size={14} /></a></li>
             </ul>
           </div>
 
           <div className="footer-column footer-services">
             <h3 className="footer-heading">Our Services</h3>
             <ul className="footer-nav">
-              <li>
-                <a href="/services/site-management" className="footer-link">
-                  Site Management <ArrowUpRight size={14} />
-                </a>
-              </li>
-              <li>
-                <a href="/services/data-management" className="footer-link">
-                  Clinical Data Management <ArrowUpRight size={14} />
-                </a>
-              </li>
-              <li>
-                <a href="/services/trial-supplies" className="footer-link">
-                  Clinical Trial Supplies <ArrowUpRight size={14} />
-                </a>
-              </li>
-              <li>
-                <a href="/services/medical-writing" className="footer-link">
-                  Medical Writing <ArrowUpRight size={14} />
-                </a>
-              </li>
-              <li>
-                <a href="/services/biostatistics" className="footer-link">
-                  Biostatistics & Analytics <ArrowUpRight size={14} />
-                </a>
-              </li>
+              <li><a href="/services/site-management" className="footer-link">Site Management <ArrowUpRight size={14} /></a></li>
+              <li><a href="/services/data-management" className="footer-link">Clinical Data Management <ArrowUpRight size={14} /></a></li>
+              <li><a href="/services/trial-supplies" className="footer-link">Clinical Trial Supplies <ArrowUpRight size={14} /></a></li>
+              <li><a href="/services/medical-writing" className="footer-link">Medical Writing <ArrowUpRight size={14} /></a></li>
+              <li><a href="/services/biostatistics" className="footer-link">Biostatistics & Analytics <ArrowUpRight size={14} /></a></li>
             </ul>
           </div>
 
@@ -167,8 +122,7 @@ const Footer = () => {
               <li className="contact-item">
                 <MapPin size={16} />
                 <span>
-                  123 Medical Plaza, Suite 500
-                  <br />
+                  123 Medical Plaza, Suite 500<br />
                   Boston, MA 02108
                 </span>
               </li>
@@ -189,15 +143,9 @@ const Footer = () => {
             © {new Date().getFullYear()} V&S Global Solutions. All rights reserved.
           </div>
           <div className="footer-legal">
-            <a href="/privacy-policy" className="legal-link">
-              Privacy Policy
-            </a>
-            <a href="/terms-of-service" className="legal-link">
-              Terms of Service
-            </a>
-            <a href="/cookies" className="legal-link">
-              Cookies Policy
-            </a>
+            <a href="/privacy-policy" className="legal-link">Privacy Policy</a>
+            <a href="/terms-of-service" className="legal-link">Terms of Service</a>
+            <a href="/cookies" className="legal-link">Cookies Policy</a>
           </div>
         </div>
       </div>

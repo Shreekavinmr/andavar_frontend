@@ -242,6 +242,14 @@
     color: #DBE4EE;
 }
 
+.footer-logo-image {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .site-footer {
@@ -263,4 +271,5 @@
         flex-wrap: wrap;
         gap: 15px;
     }
+    
 }
