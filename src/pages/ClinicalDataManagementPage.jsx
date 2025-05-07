@@ -147,7 +147,7 @@ const ClinicalDataManagementPage = () => {
             <p>
               For more details or to discuss your clinical trial needs, reach us at{' '}
               <a href="tel:+919074047489">+91 9074047489</a> or mail us at{' '}
-              <a href="mailto:info@gsbiosolutions.com">info@gsbiosolutions.com</a>.
+              <a href="mailto:info@vsglobalsolutions.com">info@vsglobalsolutions.com</a>.
             </p>
             <p>
               <strong>Office Address:</strong> 8MFC+MQ8, Maruthi Nagar, Thindal, Erode, Tamil Nadu 638012
