@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Mail, Phone, MapPin, ArrowUpRight, Twitter, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 import '../styles/Footer.css';
 
 const Footer = () => {
@@ -97,20 +97,6 @@ const Footer = () => {
             <p className="footer-tagline">
               Advancing Clinical Research For a Healthier Tomorrow
             </p>
-            <div className="footer-social">
-              <a href="https://twitter.com" className="social-link twitter" aria-label="Twitter">
-                <Twitter size={20} />
-              </a>
-              <a href="https://linkedin.com" className="social-link linkedin" aria-label="LinkedIn">
-                <Linkedin size={20} />
-              </a>
-              <a href="https://facebook.com" className="social-link facebook" aria-label="Facebook">
-                <Facebook size={20} />
-              </a>
-              <a href="https://instagram.com" className="social-link instagram" aria-label="Instagram">
-                <Instagram size={20} />
-              </a>
-            </div>
           </div>
 
           <div className="footer-column footer-links">

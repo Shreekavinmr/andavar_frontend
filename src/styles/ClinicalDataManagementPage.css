@@ -58,7 +58,7 @@
   .hero-section {
     position: relative;
     background: linear-gradient(135deg, var(--light-bg), var(--light-text) 120%);
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     padding-top: 6rem;
@@ -91,7 +91,7 @@
   .hero-content h1 {
     font-size: 2.75rem;
     font-weight: 800;
-    line-height: 1.2;
+    line-height: '!important' 1.2;
     margin-bottom: 1.25rem;
     background: linear-gradient(90deg, #2C3E50, #4A6B8A);
     -webkit-background-clip: text;
@@ -151,6 +151,36 @@
   .dots-2 {
     bottom: 15%;
     right: 5%;
+  }
+  
+  .data-management-section {
+    padding: 5rem 0;
+    background: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .data-management-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .data-management-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    animation: slideUp 1s ease-out;
+  }
+  
+  .data-management-content p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    opacity: 0.85;
+    margin-bottom: 2rem;
+    animation: slideUp 1s ease-out 0.2s forwards;
   }
   
   .services-section {
@@ -224,7 +254,7 @@
   
   .contact-content {
     position: relative;
-    z: 2;
+    z-index: 2;
   }
   
   .contact-content h2 {
@@ -281,9 +311,12 @@
     }
   
     .hero-content h1 {
-        font-size: 3.5rem;
-      }
-      
+      font-size: 3.5rem;
+    }
+  
+    .data-management-content {
+      text-align: left;
+    }
   }
   
   @media (min-width: 992px) {
@@ -323,6 +356,14 @@
       font-size: 1rem;
     }
   
+    .data-management-content h2 {
+      font-size: 2rem;
+    }
+  
+    .data-management-content p {
+      font-size: 1rem;
+    }
+  
     .service-card {
       min-height: 250px;
     }
@@ -355,6 +396,14 @@
   
     .contact-content p {
       font-size: 1.1rem;
+    }
+  
+    .data-management-content h2 {
+      font-size: 1.8rem;
+    }
+  
+    .data-management-content p {
+      font-size: 0.9rem;
     }
   
     .service-card {

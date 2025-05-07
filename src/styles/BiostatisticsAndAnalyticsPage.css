@@ -58,7 +58,7 @@
   .hero-section {
     position: relative;
     background: linear-gradient(135deg, var(--light-bg), var(--light-text) 120%);
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     padding-top: 6rem;
@@ -153,6 +153,36 @@
     right: 5%;
   }
   
+  .biostatistics-section {
+    padding: 5rem 0;
+    background: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .biostatistics-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .biostatistics-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    animation: slideUp 1s ease-out;
+  }
+  
+  .biostatistics-content p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    opacity: 0.85;
+    margin-bottom: 2rem;
+    animation: slideUp 1s ease-out 0.2s forwards;
+  }
+  
   .services-section {
     padding: 7rem 0;
     background: linear-gradient(180deg, var(--light-bg), rgba(205, 94, 119, 0.05));
@@ -224,7 +254,7 @@
   
   .contact-content {
     position: relative;
-    z: 2;
+    z-index: 2;
   }
   
   .contact-content h2 {
@@ -281,9 +311,12 @@
     }
   
     .hero-content h1 {
-        font-size: 3.5rem;
-      }
-      
+      font-size: 3.5rem;
+    }
+  
+    .biostatistics-content {
+      text-align: left;
+    }
   }
   
   @media (min-width: 992px) {
@@ -323,6 +356,14 @@
       font-size: 1rem;
     }
   
+    .biostatistics-content h2 {
+      font-size: 2rem;
+    }
+  
+    .biostatistics-content p {
+      font-size: 1rem;
+    }
+  
     .service-card {
       min-height: 250px;
     }
@@ -355,6 +396,14 @@
   
     .contact-content p {
       font-size: 1.1rem;
+    }
+  
+    .biostatistics-content h2 {
+      font-size: 1.8rem;
+    }
+  
+    .biostatistics-content p {
+      font-size: 0.9rem;
     }
   
     .service-card {

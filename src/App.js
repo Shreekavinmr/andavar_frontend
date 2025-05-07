@@ -11,7 +11,10 @@ import TherapeuticAreasPage from './pages/TherapeuticAreasPage';
 import CareersPage from './pages/Careers';
 import ContactPage from './pages/ContactPage';
 import SiteManagementPage from './pages/SiteManagementPage';
-
+import ClinicalDataManagementPage from './pages/ClinicalDataManagementPage';
+import ClinicalTrialSuppliesPage from './pages/ClinicalTrialSuppliesPage';
+import MedicalWritingPage from './pages/MedicalWritingPage';
+import BiostatisticsAndAnalyticsPage from './pages/BiostatisticsAndAnalyticsPage';
 // Import styles
 import './App.css';
 
@@ -28,6 +31,10 @@ function App() {
           <Route path='/careers' element={<CareersPage/>}/>
           <Route path='/contact' element={<ContactPage/>}/>
           <Route path='/services/site-management' element={<SiteManagementPage/>}/>
+          <Route path='/services/data-management' element={<ClinicalDataManagementPage/>}/>
+          <Route path='/services/trial-supplies' element={<ClinicalTrialSuppliesPage/>}/>
+          <Route path='/services/medical-writing' element={<MedicalWritingPage/>}/>
+          <Route path='/services/biostatistics' element={<BiostatisticsAndAnalyticsPage/>}/>
         </Routes>
         <Footer />
       </div>
