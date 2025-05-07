@@ -1,327 +1,170 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ArrowRight, FileText, CheckCircle } from 'lucide-react';
-import Tilt from 'react-parallax-tilt';
+import React from 'react';
+import { ArrowRight, Mail, FileText } from 'lucide-react';
 import '../styles/CareersPage.css';
 
-// Intersection Observer Hook for animations
-const useIntersectionObserver = (options = {}) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-        observer.unobserve(entry.target);
-      }
-    }, options);
-
-    const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, [options]);
-
-  return [ref, isVisible];
-};
-
-// Section Heading Component
-const SectionHeading = ({ title, subtitle }) => {
-  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
-
+const JobCard = ({ title, description, location, type, applyLink }) => {
   return (
-    <div
-      ref={ref}
-      className={`section-heading ${isVisible ? 'animate-slide-up' : ''}`}
-    >
+    <div className="job-card">
       <h2>{title}</h2>
-      <div className="heading-divider"></div>
-      <p>{subtitle}</p>
+      <p>{description}</p>
+      <div className="job-details">
+        <span><strong>Location:</strong> {location}</span>
+        <span><strong>Type:</strong> {type}</span>
+      </div>
+      <a href={applyLink} className="job-apply-link">
+        Apply Now <ArrowRight size={18} />
+      </a>
     </div>
   );
 };
 
-// Job Card Component
-const JobCard = ({ title, department, location, type }) => {
-  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
-
+const BenefitCard = ({ title, description, icon }) => {
   return (
-    <Tilt
-      tiltMaxAngleX={10}
-      tiltMaxAngleY={10}
-      perspective={1200}
-      scale={1.03}
-      transitionSpeed={700}
-      glareEnable={true}
-      glareMaxOpacity={0.3}
-      glareColor="#ffffff"
-      glarePosition="all"
-    >
-      <div
-        ref={ref}
-        className={`job-card ${isVisible ? 'card-visible' : ''}`}
-      >
-        <div className="card-overlay"></div>
-        <div className="card-content">
-          <h3>{title}</h3>
-          <div className="card-divider"></div>
-          <p className="department">{department}</p>
-          <p className="location">{location}</p>
-          <span className="job-type">{type}</span>
-          <a
-            href="#apply-section"
-            className="view-details"
-          >
-            View Details
-            <ArrowRight size={16} className="ml-2" />
-          </a>
-        </div>
-      </div>
-    </Tilt>
-  );
-};
-
-// Value Proposition Card
-const ValueCard = ({ title, description }) => {
-  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
-
-  return (
-    <Tilt
-      tiltMaxAngleX={10}
-      tiltMaxAngleY={10}
-      perspective={1200}
-      scale={1.03}
-      transitionSpeed={700}
-      glareEnable={true}
-      glareMaxOpacity={0.3}
-      glareColor="#ffffff"
-      glarePosition="all"
-    >
-      <div
-        ref={ref}
-        className={`value-card ${isVisible ? 'card-visible' : ''}`}
-      >
-        <div className="card-overlay"></div>
-        <div className="card-content">
-          <h3>{title}</h3>
-          <div className="card-divider"></div>
-          <p>{description}</p>
-        </div>
-      </div>
-    </Tilt>
-  );
-};
-
-// Application Form Component
-const ApplicationForm = () => {
-  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
-  const [fileName, setFileName] = useState('');
-  const [formStatus, setFormStatus] = useState('');
-
-  const handleFileChange = (e) => {
-    if (e.target.files[0]) {
-      setFileName(e.target.files[0].name);
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormStatus('submitted');
-    setTimeout(() => {
-      setFormStatus('success');
-    }, 1500);
-  };
-
-  return (
-    <div
-      ref={ref}
-      id="apply-section"
-      className={`application-form ${isVisible ? 'card-visible' : ''}`}
-    >
-      <div className="card-overlay"></div>
-      <div className="form-content">
-        <h3>Apply Now</h3>
-        <div className="card-divider"></div>
-        {formStatus === 'success' ? (
-          <div className="success-message">
-            <div className="success-icon">
-              <CheckCircle size={32} />
-            </div>
-            <h4>Application Submitted!</h4>
-            <p>Thank you for your interest in joining V&S Global Solutions. We'll review your application and get back to you soon.</p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="form-grid">
-            <div>
-              <label>First Name*</label>
-              <input type="text" required />
-            </div>
-            <div>
-              <label>Last Name*</label>
-              <input type="text" required />
-            </div>
-            <div>
-              <label>Email Address*</label>
-              <input type="email" required />
-            </div>
-            <div>
-              <label>Phone Number*</label>
-              <input type="tel" required />
-            </div>
-            <div>
-              <label>Position You're Applying For*</label>
-              <select required>
-                <option value="">Select a position</option>
-                <option value="clinical-research-associate">Clinical Research Associate</option>
-                <option value="research-coordinator">Research Coordinator</option>
-                <option value="data-manager">Clinical Data Manager</option>
-                <option value="medical-writer">Medical Writer</option>
-                <option value="biostatistician">Biostatistician</option>
-                <option value="project-manager">Project Manager</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div>
-              <label>Upload Your Resume/CV*</label>
-              <div className="file-upload">
-                <div className="upload-area">
-                  <label className="upload-label">
-                    <span>Upload a file</span>
-                    <input
-                      type="file"
-                      className="sr-only"
-                      accept=".pdf,.doc,.docx"
-                      onChange={handleFileChange}
-                      required
-                    />
-                  </label>
-                  <p>or drag and drop</p>
-                  <p className="file-types">PDF, DOC up to 10MB</p>
-                  {fileName && (
-                    <p className="file-name">
-                      <FileText size={16} className="mr-2" />
-                      {fileName}
-                    </p>
-                  )}
-                </div>
-              </div>
-            </div>
-            <div>
-              <label>Why do you want to join V&S Global Solutions? (Optional)</label>
-              <textarea rows="4"></textarea>
-            </div>
-            <div>
-              <button
-                type="submit"
-                className={`submit-button ${formStatus === 'submitted' ? 'submitting' : ''}`}
-                disabled={formStatus === 'submitted'}
-              >
-                {formStatus === 'submitted' ? (
-                  <>
-                    <svg className="animate-spin mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Submitting...
-                  </>
-                ) : (
-                  <>
-                    Submit Application
-                    <ArrowRight size={20} className="ml-2" />
-                  </>
-                )}
-              </button>
-            </div>
-          </form>
-        )}
-      </div>
+    <div className="benefit-card">
+      <div className="benefit-icon">{icon}</div>
+      <h3>{title}</h3>
+      <p>{description}</p>
     </div>
   );
 };
 
-// Main Careers Page Component
 const CareersPage = () => {
-  const [heroRef, heroVisible] = useIntersectionObserver({ threshold: 0.1 });
-
-  // Sample job listings
-  const openPositions = [
+  const jobs = [
     {
       title: "Clinical Research Associate",
-      department: "Clinical Operations",
-      location: "Mumbai, India",
-      type: "Full-time"
-    },
-    {
-      title: "Senior Medical Writer",
-      department: "Medical Affairs",
-      location: "Delhi, India",
-      type: "Full-time"
-    },
-    {
-      title: "Clinical Data Manager",
-      department: "Data Management",
-      location: "Bangalore, India",
-      type: "Full-time"
+      description:
+        "Join our team to monitor clinical trials, ensure compliance with protocols, and maintain data integrity. Ideal candidates have strong analytical skills and experience in clinical research settings.",
+      location: "Erode, Tamil Nadu",
+      type: "Full-Time",
+      applyLink: "/careers/apply/clinical-research-associate",
     },
     {
       title: "Biostatistician",
-      department: "Biometrics",
-      location: "Hyderabad, India",
-      type: "Contract"
+      description:
+        "Analyze clinical trial data using SAS, R, and Excel. Collaborate with research teams to design studies and interpret results. Proficiency in statistical software is required.",
+      location: "Remote",
+      type: "Full-Time",
+      applyLink: "/careers/apply/biostatistician",
     },
     {
-      title: "Research Coordinator",
-      department: "Clinical Operations",
-      location: "Chennai, India",
-      type: "Full-time"
+      title: "Clinical Data Manager",
+      description:
+        "Oversee data collection, validation, and management for clinical trials. Ensure data quality and compliance with regulatory standards. Experience with EDC systems is a plus.",
+      location: "Erode, Tamil Nadu",
+      type: "Full-Time",
+      applyLink: "/careers/apply/clinical-data-manager",
     },
     {
-      title: "Project Manager",
-      department: "Project Management",
-      location: "Pune, India",
-      type: "Full-time"
-    }
+      title: "Intern - Clinical Research",
+      description:
+        "Support clinical research projects, including data entry, literature reviews, and protocol development. Ideal for students or recent graduates passionate about clinical research.",
+      location: "Erode, Tamil Nadu",
+      type: "Internship (6 Months)",
+      applyLink: "/careers/apply/intern-clinical-research",
+    },
   ];
 
-  // Value propositions
-  const valueProps = [
+  const benefits = [
     {
-      title: "Growth Opportunities",
-      description: "Develop your skills in a dynamic startup environment focused on clinical research innovation."
-    },
-    {
-      title: "Meaningful Impact",
-      description: "Help improve healthcare outcomes across India and beyond through groundbreaking clinical research."
+      title: "Professional Growth",
+      description:
+        "Access continuous learning opportunities, including workshops, certifications, and mentorship from industry experts.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+        </svg>
+      ),
     },
     {
       title: "Collaborative Culture",
-      description: "Join a diverse team of passionate professionals who challenge and support each other."
+      description:
+        "Work in a dynamic, inclusive environment where your ideas are valued, and teamwork drives innovation.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path>
+          <circle cx="10" cy="7" r="4"></circle>
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+      ),
     },
     {
-      title: "Excellence & Recognition",
-      description: "Your contributions will be valued and recognized in our merit-based work environment."
-    }
+      title: "Impactful Work",
+      description:
+        "Contribute to groundbreaking clinical research that improves global health outcomes and advances medical science.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12" y2="8"></line>
+          <line x1="8" y1="12" x2="8" y2="12"></line>
+          <line x1="16" y1="12" x2="16" y2="12"></line>
+        </svg>
+      ),
+    },
+    {
+      title: "Work-Life Balance",
+      description:
+        "Enjoy flexible work arrangements, wellness programs, and a supportive environment that prioritizes your well-being.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      ),
+    },
   ];
 
   return (
     <div className="careers-page">
-      {/* Hero Section (Unchanged) */}
       <section className="hero-section">
         <div className="shape shape-1"></div>
         <div className="shape shape-2"></div>
         <div className="dots-pattern dots-1"></div>
         <div className="dots-pattern dots-2"></div>
         <div className="container">
-          <div
-            ref={heroRef}
-            className={`hero-content ${heroVisible ? 'animate-slide-up' : ''}`}
-          >
+          <div className="hero-content">
             <div className="hero-badge">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -336,104 +179,91 @@ const CareersPage = () => {
               >
                 <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
               </svg>
-              Career Opportunities
+              Join Our Mission
             </div>
-            <h1>Join Our Mission to Transform Clinical Research</h1>
+            <h1>Welcome to Your Journey at V&S Global Solutions</h1>
             <p>
-              Be part of a team pushing the boundaries of healthcare innovation and making a lasting impact on global health outcomes.
+              If you’re passionate about making a lasting impact in clinical research and shaping sustainable health solutions, V&S Global Solutions offers a dynamic environment to hone your skills and grow your career.
             </p>
-            <a
-              href="#open-positions"
-              className="cta-button"
-            >
-              Explore Open Positions
-              <div className="button-overlay"></div>
-              <ArrowRight size={20} className="ml-2" />
-            </a>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="about-section">
-        <div className="animated-bg about-animated-bg"></div>
+      <section className="benefits-section">
         <div className="container">
-          <SectionHeading
-            title="About V&S Global Solutions"
-            subtitle="Learn about our mission and why we're passionate about clinical research"
-          />
-          <div className="about-content">
-            <p>
-              At V&S Global Solutions, we are committed to revolutionizing clinical research to improve healthcare outcomes globally. Our team is dedicated to fostering innovation, collaboration, and excellence in a dynamic startup environment.
-            </p>
-            <p>
-              We attract passionate individuals who share our vision of transforming the clinical research landscape. Joining us means becoming part of a diverse team that values your contributions and supports your professional growth.
-            </p>
-            <p>
-              As we expand our presence in India, we are seeking talented professionals to strengthen our team. Explore our opportunities and take the first step towards a rewarding career with us.
-            </p>
-            <div className="content-note">
-              <p>
-                Please review the job descriptions carefully to ensure alignment with your skills and career goals before applying.
-              </p>
-            </div>
+          <div className="section-header">
+            <h2>Why Join V&S Global Solutions</h2>
+            <p>Discover the benefits of being part of our innovative and passionate team.</p>
           </div>
-        </div>
-      </section>
-
-      {/* Open Positions Section */}
-      <section className="positions-section" id="open-positions">
-        <div className="animated-bg positions-animated-bg"></div>
-        <div className="container">
-          <SectionHeading
-            title="Open Positions"
-            subtitle="Find the perfect role to contribute to our mission"
-          />
-          <div className="positions-grid">
-            {openPositions.map((job, index) => (
-              <JobCard
-                key={index}
-                title={job.title}
-                department={job.department}
-                location={job.location}
-                type={job.type}
-              />
+          <div className="benefits-grid">
+            {benefits.map((benefit, index) => (
+              <BenefitCard key={index} {...benefit} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Join Us Section */}
-      <section className="values-section">
-        <div className="animated-bg values-animated-bg"></div>
+      <section className="apply-section">
+        <div className="animated-bg apply-animated-bg">
+          <div className="apply-telescope apply-telescope-1"></div>
+          <div className="apply-telescope apply-telescope-2"></div>
+          <div className="apply-orbit apply-orbit-1"></div>
+          <div className="apply-orbit apply-orbit-2"></div>
+          <div className="apply-particle apply-particle-1"></div>
+          <div className="apply-particle apply-particle-2"></div>
+          <div className="apply-glow apply-glow-1"></div>
+          <div className="apply-glow apply-glow-2"></div>
+        </div>
         <div className="container">
-          <SectionHeading
-            title="Why Join V&S Global Solutions"
-            subtitle="Discover what makes our team and culture special"
-          />
-          <div className="values-grid">
-            {valueProps.map((prop, index) => (
-              <ValueCard
-                key={index}
-                title={prop.title}
-                description={prop.description}
-              />
-            ))}
+          <div className="apply-content">
+            <h2>Apply Now</h2>
+            <p>Ready to join our team? Fill out the form below to submit your application.</p>
+            <div className="apply-form">
+              <div className="form-group">
+                <label htmlFor="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your full name" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="resume">Upload Resume</label>
+                <input type="file" id="resume" accept=".pdf,.doc,.docx" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="coverLetter">Cover Letter (Optional)</label>
+                <textarea id="coverLetter" placeholder="Tell us why you're a great fit" />
+              </div>
+              <button type="submit" className="submit-button">
+                Submit Application <ArrowRight size={18} />
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Application Form Section */}
-      <section className="form-section">
-        <div className="animated-bg form-animated-bg"></div>
-        <div className="container">
-          <SectionHeading
-            title="Join Our Team"
-            subtitle="Take the first step towards your career with V&S Global Solutions"
-          />
-          <ApplicationForm />
+      <section className="contact-section">
+      <div className="container">
+        <div className="contact-content">
+          {/* L-shaped dotted corners */}
+          <div className="corner corner-tl"></div>
+          <div className="corner corner-tr"></div>
+          <div className="corner corner-bl"></div>
+          <div className="corner corner-br"></div>
+          
+          <h2>Contact Our HR Team</h2>
+          <p>
+            For inquiries about job openings or the application process, reach us at{' '}
+            <a href="mailto:hr@vsglobalsolutions.com">hr@vsglobalsolutions.com</a> or call{' '}
+            <a href="tel:+919074047489">+91 9074047489</a>.
+          </p>
+          <p>
+            <strong>Office Address:</strong> 8MFC+MQ8, Maruthi Nagar, Thindal, Erode, Tamil Nadu 638012
+          </p>
         </div>
-      </section>
+      </div>
+    </section>
     </div>
   );
 };

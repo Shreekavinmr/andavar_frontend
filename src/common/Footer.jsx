@@ -192,7 +192,7 @@ const Footer = () => {
               </li>
               <li className="contact-item">
                 <Mail size={16} />
-                <a href="mailto:contact@gsbiosolutions.com">contact@vsglobalsolutions.com</a>
+                <a href="mailto:contact@vsglobalsolutions.com">contact@vsglobalsolutions.com</a>
               </li>
             </ul>
           </div>

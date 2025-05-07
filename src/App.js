@@ -9,6 +9,7 @@ import AboutUsPage from './pages/AboutUsPage';
 import CoursesPage from './pages/CoursesPage';
 import TherapeuticAreasPage from './pages/TherapeuticAreasPage';
 import CareersPage from './pages/Careers';
+import ContactPage from './pages/ContactPage';
 
 // Import styles
 import './App.css';
@@ -24,6 +25,7 @@ function App() {
           <Route path="/courses" element={<CoursesPage/>} />
           <Route path='/therapeutic-areas' element={<TherapeuticAreasPage/>}/>
           <Route path='/careers' element={<CareersPage/>}/>
+          <Route path='/contact' element={<ContactPage/>}/>
         </Routes>
         <Footer />
       </div>
