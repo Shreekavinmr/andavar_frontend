@@ -18,7 +18,7 @@ const BiostatisticsOverview = () => {
         <div className="biostatistics-content">
           <h2>Our Biostatistics Approach</h2>
           <p>
-            At Gs Biosolutions, we deliver end-to-end biostatistical support, from crafting trial designs and protocols to managing data, analyzing results, and producing clinical reports. Our skilled statisticians collaborate closely with clients, offering expertise that transcends basic number-crunching. We provide tailored solutions to optimize trial outcomes, ensuring accuracy and compliance across all stages of clinical research.
+            At V&S Global Solutions, we deliver end-to-end biostatistical support, from crafting trial designs and protocols to managing data, analyzing results, and producing clinical reports. Our skilled statisticians collaborate closely with clients, offering expertise that transcends basic number-crunching. We provide tailored solutions to optimize trial outcomes, ensuring accuracy and compliance across all stages of clinical research.
           </p>
         </div>
       </div>
@@ -166,7 +166,7 @@ const BiostatisticsAndAnalyticsPage = () => {
             <p>
               For more details or to discuss your biostatistics needs, reach us at{' '}
               <a href="tel:+919074047489">+91 9074047489</a> or mail us at{' '}
-              <a href="mailto:info@gsbiosolutions.com">info@gsbiosolutions.com</a>.
+              <a href="mailto:info@vsglobalsolutions.com">info@vsglobalsolutions.com</a>.
             </p>
             <p>
               <strong>Office Address:</strong> 8MFC+MQ8, Maruthi Nagar, Thindal, Erode, Tamil Nadu 638012

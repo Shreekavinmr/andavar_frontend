@@ -243,7 +243,7 @@ const SiteManagementPage = () => {
             </div>
             <h1>Site Management Organisation</h1>
             <p>
-              Gs Biosolutions offers a complete spectrum service of Clinical Trial at site level. Highly experienced management with extensive clinical trial experience and qualified study coordinators help investigators to streamline each and every study activity. Gs Biosolutions provides trained study coordinators who are capable to carry out clinical trial activities and ensure quality performance for every aspect of a trial. Our team is enabled to set up the entire clinical study including protocol development, site setup and management, rapid patient enrollment and study closeout/reporting.
+              V&S Global Solutions offers a complete spectrum service of Clinical Trial at site level. Highly experienced management with extensive clinical trial experience and qualified study coordinators help investigators to streamline each and every study activity. V&S Global Solutions provides trained study coordinators who are capable to carry out clinical trial activities and ensure quality performance for every aspect of a trial. Our team is enabled to set up the entire clinical study including protocol development, site setup and management, rapid patient enrollment and study closeout/reporting.
             </p>
           </div>
         </div>
@@ -270,7 +270,7 @@ const SiteManagementPage = () => {
             <p>
               For more details or to discuss your clinical trial needs, reach us at{' '}
               <a href="tel:+919074047489">+91 9074047489</a> or mail us at{' '}
-              <a href="mailto:info@gsbiosolutions.com">info@gsbiosolutions.com</a>.
+              <a href="mailto:info@vsglobalsolutions.com">info@vsglobalsolutions.com</a>.
             </p>
             <p>
               <strong>Office Address:</strong> 8MFC+MQ8, Maruthi Nagar, Thindal, Erode, Tamil Nadu 638012

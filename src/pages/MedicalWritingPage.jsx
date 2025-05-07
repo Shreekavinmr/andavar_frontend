@@ -18,7 +18,7 @@ const MedicalWritingOverview = () => {
         <div className="medical-writing-content">
           <h2>Our Medical Writing Approach</h2>
           <p>
-            Medical writers are critical to the communication process of outlining the goals, strategies, analysis, and medical understanding of a clinical trial/program to patients, sites, sponsors, and regulatory agencies. Gs Biosolutions’ regulatory and medical writers team are lucid and to the point in every step of the process of preparing clinical documents including protocols, clinical study reports (CSRs), and Investigator’s Brochures. Gs Biosolutions provides medical writing support to the operational departments including Biostatistics, Medical Affairs, Quality Assurance, Regulatory, and Clinical Operations beginning with early-stage development through marketing application and to post-approval. Gs Biosolutions provides rapid turnaround to meet deadlines efficiently.
+            Medical writers are critical to the communication process of outlining the goals, strategies, analysis, and medical understanding of a clinical trial/program to patients, sites, sponsors, and regulatory agencies. V&S Global solutions’ regulatory and medical writers team are lucid and to the point in every step of the process of preparing clinical documents including protocols, clinical study reports (CSRs), and Investigator’s Brochures. V&S Global solutions provides medical writing support to the operational departments including Biostatistics, Medical Affairs, Quality Assurance, Regulatory, and Clinical Operations beginning with early-stage development through marketing application and to post-approval. V&S Global Solutions provides rapid turnaround to meet deadlines efficiently.
           </p>
         </div>
       </div>
@@ -245,7 +245,7 @@ const MedicalWritingPage = () => {
             <p>
               For more details or to discuss your medical writing needs, reach us at{' '}
               <a href="tel:+919074047489">+91 9074047489</a> or mail us at{' '}
-              <a href="mailto:info@gsbiosolutions.com">info@gsbiosolutions.com</a>.
+              <a href="mailto:info@vsglobalsolutions.com">info@vsglobalsolutions.com</a>.
             </p>
             <p>
               <strong>Office Address:</strong> 8MFC+MQ8, Maruthi Nagar, Thindal, Erode, Tamil Nadu 638012
