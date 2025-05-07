@@ -70,7 +70,7 @@
   min-height: 70vh;
   display: flex;
   align-items: center;
-  padding-top: 6rem;
+  padding-top: 8rem;
   overflow: hidden;
 }
 
@@ -906,7 +906,7 @@
 
 @media (max-width: 576px) {
   .hero-section {
-    padding: 4rem 0;
+    padding: 6rem 0;
   }
 
   .section-header h2 {
@@ -931,5 +931,42 @@
 
   .cta-content p {
     font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-container {
+    padding-left: 60px; /* Ensure enough space for the timeline line and icon */
+  }
+
+  .timeline-line {
+    left: 30px; /* Move the timeline line closer to the left for better centering */
+    width: 4px; /* Slightly thinner line for mobile */
+  }
+
+  .timeline-event {
+    width: calc(100% - 60px); /* Adjust width to account for the icon and padding */
+    left: 0;
+    padding-left: 60px; /* Space for the icon */
+    padding-right: 20px;
+  }
+
+  .timeline-event.left,
+  .timeline-event.right {
+    left: 0;
+    padding-left: 60px; /* Consistent padding for both sides */
+    padding-right: 20px;
+  }
+
+  .timeline-icon {
+    left: 0;
+    transform: translateX(-50%); /* Center the icon on the timeline line */
+    width: 50px; /* Slightly smaller icon for mobile */
+    height: 50px;
+  }
+
+  .timeline-event.left .timeline-icon,
+  .timeline-event.right .timeline-icon {
+    left: 15px; /* Position the icon so its center aligns with the timeline line at 30px */
   }
 }
