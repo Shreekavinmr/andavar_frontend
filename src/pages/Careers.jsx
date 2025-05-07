@@ -1,22 +1,7 @@
 import React from 'react';
-import { ArrowRight, Mail, FileText } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import '../styles/CareersPage.css';
 
-const JobCard = ({ title, description, location, type, applyLink }) => {
-  return (
-    <div className="job-card">
-      <h2>{title}</h2>
-      <p>{description}</p>
-      <div className="job-details">
-        <span><strong>Location:</strong> {location}</span>
-        <span><strong>Type:</strong> {type}</span>
-      </div>
-      <a href={applyLink} className="job-apply-link">
-        Apply Now <ArrowRight size={18} />
-      </a>
-    </div>
-  );
-};
 
 const BenefitCard = ({ title, description, icon }) => {
   return (
@@ -29,40 +14,6 @@ const BenefitCard = ({ title, description, icon }) => {
 };
 
 const CareersPage = () => {
-  const jobs = [
-    {
-      title: "Clinical Research Associate",
-      description:
-        "Join our team to monitor clinical trials, ensure compliance with protocols, and maintain data integrity. Ideal candidates have strong analytical skills and experience in clinical research settings.",
-      location: "Erode, Tamil Nadu",
-      type: "Full-Time",
-      applyLink: "/careers/apply/clinical-research-associate",
-    },
-    {
-      title: "Biostatistician",
-      description:
-        "Analyze clinical trial data using SAS, R, and Excel. Collaborate with research teams to design studies and interpret results. Proficiency in statistical software is required.",
-      location: "Remote",
-      type: "Full-Time",
-      applyLink: "/careers/apply/biostatistician",
-    },
-    {
-      title: "Clinical Data Manager",
-      description:
-        "Oversee data collection, validation, and management for clinical trials. Ensure data quality and compliance with regulatory standards. Experience with EDC systems is a plus.",
-      location: "Erode, Tamil Nadu",
-      type: "Full-Time",
-      applyLink: "/careers/apply/clinical-data-manager",
-    },
-    {
-      title: "Intern - Clinical Research",
-      description:
-        "Support clinical research projects, including data entry, literature reviews, and protocol development. Ideal for students or recent graduates passionate about clinical research.",
-      location: "Erode, Tamil Nadu",
-      type: "Internship (6 Months)",
-      applyLink: "/careers/apply/intern-clinical-research",
-    },
-  ];
 
   const benefits = [
     {
