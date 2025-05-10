@@ -112,7 +112,7 @@ const HomePage = () => {
         </div>
       </div>
       
-      <div class="image-grid">
+      {/* <div class="image-grid">
         <div class="image-plus">
           <div class="image-item">
             <img src="assets/images/vs_2.jpg" alt="Primary clinical research" />
@@ -130,7 +130,7 @@ const HomePage = () => {
             <img src="assets/images/vs_7.jpg" alt="Global healthcare innovation" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   </div>
 </section>

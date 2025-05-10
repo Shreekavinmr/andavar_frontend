@@ -4,9 +4,9 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 10px 0;
     transition: all 0.4s ease;
-    background-color: transparent;
+    background-color: rgba(236, 240, 241, 0.98); 
 }
 
 .site-header.scrolled {

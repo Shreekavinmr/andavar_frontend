@@ -39,7 +39,7 @@ body {
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding-top: 4rem;
+  padding-top: 0; 
 }
 
 .container {
@@ -67,7 +67,7 @@ body {
   display: inline-flex;
   align-items: center;
   background-color: rgba(205, 94, 119, 0.1);
-  color: var(--primary-color);
+  color:#d13f87;
   padding: 0.5rem 1rem;
   border-radius: 50px;
   font-size: 0.875rem;
@@ -116,7 +116,7 @@ body {
   font-weight: 700;
   color: var(--primary-color);
   line-height: 1;
-  margin-bottom: 0.25rem;
+  margin-bottom: 4rem;
 }
 
 .stat-label {
@@ -160,8 +160,8 @@ body {
 
 .secondary-button {
   background-color: transparent;
-  border: 2px solid #2C3E50;
-  color: #2C3E50;
+  border: 2px solid #ffffff;
+  color: #ffffff;
 }
 
 .secondary-button:hover {
@@ -818,10 +818,23 @@ body {
   
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     justify-content: center;
     position: relative;
+    max-width: 960px; /* Adjust to fit 3 cards comfortably */
+    margin: 0 auto;
+    margin-bottom: 1.5rem; /* Space between rows */
+  }
+  
+  .services-grid-second-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    justify-content: center;
+    position: relative;
+    max-width: 640px; /* Adjust to fit 2 cards comfortably */
+    margin: 0 auto;
   }
   
   .services-grid::before {
@@ -870,7 +883,7 @@ body {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   }
   
-  .service-card-0, .service-card-1, .service-card-2, .service-card-3 {
+  .service-card-0, .service-card-1, .service-card-2, .service-card-3, .service-card-4 {
     background: linear-gradient(135deg, #ffffff, var(--light-bg));
   }
   
@@ -946,6 +959,21 @@ body {
     background-color: var(--primary-color);
     color: white;
     transform: translateX(5px);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .services-grid, .services-grid-second-row {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 640px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .services-grid, .services-grid-second-row {
+      grid-template-columns: 1fr;
+      max-width: 320px;
+    }
   }
   
   /* Stats Section */
@@ -1328,12 +1356,15 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(253, 245, 247, 0.95));
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../../public/assets/images/classroom_bg_vs2.jpg") no-repeat center;
     border: 2px solid rgba(205, 94, 119, 0.2);
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     position: relative;
     z-index: 1;
+    background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
   }
   
   .courses-container::before {
@@ -1378,14 +1409,14 @@ body {
   .courses-text h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-color);
+    color: #ee959e;
     margin-bottom: 1rem;
   }
   
   .courses-text p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: var(--secondary-color);
+    color: #fdf5f7;
     max-width: 400px;
   }
   

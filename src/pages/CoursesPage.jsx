@@ -21,9 +21,6 @@ const CourseCard = ({ title, description, modules, duration, brochure, applicati
         <a href={brochure} className="course-link">
           Download Brochure <ArrowRight size={18} />
         </a>
-        <a href={application} className="course-link">
-          Application Form <ArrowRight size={18} />
-        </a>
       </div>
     </div>
   );
