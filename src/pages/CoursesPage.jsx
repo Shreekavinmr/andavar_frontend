@@ -18,9 +18,9 @@ const CourseCard = ({ title, description, modules, duration, brochure, applicati
       </div>
       <div className="course-duration">{duration}</div>
       <div className="course-links">
-        <a href={brochure} className="course-link">
+        {/* <a href={brochure} className="course-link">
           Download Brochure <ArrowRight size={18} />
-        </a>
+        </a> */}
       </div>
     </div>
   );
@@ -55,22 +55,22 @@ const CoursesPage = () => {
       brochure: "/assets/docs/clinical_research_brochure.pdf",
       application: "/assets/docs/clinical_research_application.pdf",
     },
-    {
-      title: "Certificate Programme In Biostatistics & Statistical Software (SAS, R & EXCEL)",
-      description:
-        "The CERTIFICATE PROGRAMME IN BIOSTATISTICS & STATISTICAL SOFTWARES course introduces the fundamentals of SAS programming, R, and Excel. Emphasis is placed on learning basic SAS commands and statements for solving a variety of data processing applications. You will be able to analyse and write code for real problems, learn to use softwares to work with clinical datasets, perform advanced statistical techniques to obtain optimized results.",
-      modules: [
-        "Basic Biostatistics",
-        "Statistical analysis tests and methods",
-        "SAS programming and analysis of data",
-        "R and EXCEL programming – basics and detailed analysis",
-        "Sample project (students will have the option to carry out data analyses from clinical trials using the computer-based SAS/R/EXCEL software package)",
-      ],
-      duration: "5 Months (Evening & Weekend classes)",
-      image: "/assets/images/courses_2.jpg",
-      brochure: "/assets/docs/biostatistics_brochure.pdf",
-      application: "/assets/docs/biostatistics_application.pdf",
-    },
+    // {
+    //   title: "Certificate Programme In Biostatistics & Statistical Software (SAS, R & EXCEL)",
+    //   description:
+    //     "The CERTIFICATE PROGRAMME IN BIOSTATISTICS & STATISTICAL SOFTWARES course introduces the fundamentals of SAS programming, R, and Excel. Emphasis is placed on learning basic SAS commands and statements for solving a variety of data processing applications. You will be able to analyse and write code for real problems, learn to use softwares to work with clinical datasets, perform advanced statistical techniques to obtain optimized results.",
+    //   modules: [
+    //     "Basic Biostatistics",
+    //     "Statistical analysis tests and methods",
+    //     "SAS programming and analysis of data",
+    //     "R and EXCEL programming – basics and detailed analysis",
+    //     "Sample project (students will have the option to carry out data analyses from clinical trials using the computer-based SAS/R/EXCEL software package)",
+    //   ],
+    //   duration: "5 Months (Evening & Weekend classes)",
+    //   image: "/assets/images/courses_2.jpg",
+    //   brochure: "/assets/docs/biostatistics_brochure.pdf",
+    //   application: "/assets/docs/biostatistics_application.pdf",
+    // },
   ];
 
   const whyChooseUs = [
@@ -159,11 +159,14 @@ const CoursesPage = () => {
             <h2>Contact Us for Admissions</h2>
             <p>
               For admission and more details, reach us at{' '}
-              <a href="tel:+919074047489">+91 9074047489</a> or mail us at{' '}
-              <a href="mailto:info@vsglobalsolutions.com">info@vsglobalsolutions.com</a>.
+              <a href="tel:+919080108558">+91 9080108558</a> or mail us at{' '}
+              <a href="mailto:V&sglobalbiosolutions.com">V&sglobalbiosolutions.com</a>.
             </p>
             <p>
-              <strong>Institute Address:</strong> 8MFC+MQ8, Maruthi Nagar, Thindal, Erode, Tamil Nadu 638012
+              <strong>Office Address:</strong><br/>
+1/393/A, Veppampalayam,<br/>
+Erode, Tamil Nadu – 638012,<br/>
+India
             </p>
           </div>
         </div>

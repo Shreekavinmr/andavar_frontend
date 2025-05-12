@@ -105,7 +105,10 @@ const ContactPage = () => {
                 </svg>
               </div>
               <h3>Address</h3>
-              <p>8MFC+MQ8, Maruthi Nagar, Thindal, Erode, Tamil Nadu 638012</p>
+              <p>
+1/393/A, Veppampalayam,<br/>
+Erode, Tamil Nadu – 638012,<br/>
+India </p>
             </div>
             <div className="contact-info-card">
               <div className="contact-icon">
@@ -125,7 +128,7 @@ const ContactPage = () => {
               </div>
               <h3>Phone</h3>
               <p>
-                <a href="tel:+919074047489">+91 9074047489</a>
+                <a href="tel:+919080108558">+91 9080108558</a>
               </p>
             </div>
             <div className="contact-info-card">
@@ -222,7 +225,7 @@ const ContactPage = () => {
             </div>
             <div className="contact-map">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.202694657418!2d77.56499741478203!3d11.341038991912162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f467206f113%3A0x3f1a4b1b0f9b0c7e!2sMaruthi%20Nagar%2C%20Thindal%2C%20Erode%2C%20Tamil%20Nadu%20638012!5e0!3m2!1sen!2sin!4v1634567890123!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.489609110106!2d77.6530471777461!3d11.298880160220042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96e79e07f1c55%3A0xf0166908c2deb9b0!2s7MX5%2B9H3%2C%201%2C%20Veppampalayam%2C%20Erode%2C%20Tamil%20Nadu%20638112!5e0!3m2!1sen!2sin!4v1747058461672!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

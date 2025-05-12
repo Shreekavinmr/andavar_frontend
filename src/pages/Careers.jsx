@@ -312,11 +312,14 @@ const CareersPage = () => {
             <h2>Contact Our HR Team</h2>
             <p>
               For inquiries about job openings or the application process, reach us at{' '}
-              <a href="mailto:hr@vsglobalsolutions.com">hr@vsglobalsolutions.com</a> or call{' '}
-              <a href="tel:+919074047489">+91 9074047489</a>.
+              <a href="mailto:V&sglobalbiosolutions.com">V&sglobalbiosolutions.com</a> or call{' '}
+              <a href="tel:+919080108558">+91 9080108558</a>.
             </p>
             <p>
-              <strong>Office Address:</strong> 8MFC+MQ8, Maruthi Nagar, Thindal, Erode, Tamil Nadu 638012
+               <strong>Office Address:</strong><br/>
+1/393/A, Veppampalayam,<br/>
+Erode, Tamil Nadu – 638012,<br/>
+India
             </p>
           </div>
         </div>

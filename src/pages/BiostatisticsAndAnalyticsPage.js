@@ -165,11 +165,14 @@ const BiostatisticsAndAnalyticsPage = () => {
             <h2>Contact Us for Collaboration</h2>
             <p>
               For more details or to discuss your biostatistics needs, reach us at{' '}
-              <a href="tel:+919074047489">+91 9074047489</a> or mail us at{' '}
-              <a href="mailto:info@vsglobalsolutions.com">info@vsglobalsolutions.com</a>.
+              <a href="tel:+919080108558">+91 9080108558</a> or mail us at{' '}
+              <a href="mailto:info@vsglobalsolutions.com">V&sglobalbiosolutions.com</a>.
             </p>
             <p>
-              <strong>Office Address:</strong> 8MFC+MQ8, Maruthi Nagar, Thindal, Erode, Tamil Nadu 638012
+              <strong>Office Address:</strong><br/>
+1/393/A, Veppampalayam,<br/>
+Erode, Tamil Nadu – 638012,<br/>
+India
             </p>
           </div>
         </div>

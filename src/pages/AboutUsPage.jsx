@@ -287,7 +287,7 @@ const AboutUsPage = () => {
       </section>
 
       {/* History Timeline Section */}
-      <section className="history-section">
+      {/* <section className="history-section">
         <div className="animated-bg history-animated-bg"></div>
         <div className="container">
           <SectionHeading
@@ -296,7 +296,7 @@ const AboutUsPage = () => {
           />
           <Timeline />
         </div>
-      </section>
+      </section> */}
 
       {/* Core Values Section */}
       <section className="values-section">
