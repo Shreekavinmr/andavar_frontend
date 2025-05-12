@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+// import { ArrowRight } from 'lucide-react';
 import '../styles/CoursesPage.css';
 
 const CourseCard = ({ title, description, modules, duration, brochure, application, image }) => {
