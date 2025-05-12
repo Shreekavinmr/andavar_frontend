@@ -608,3 +608,91 @@
       min-height: 200px;
     }
   }
+
+  /* Add to existing .therapeutic-card styles */
+.therapeutic-card.coming-soon {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(238, 149, 158, 0.1));
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.therapeutic-card.coming-soon .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 300px; /* Match min-height of regular cards */
+}
+
+.coming-soon-text {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Ensure .therapeutic-card styles include centering for content */
+.therapeutic-card {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(205, 94, 119, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 300px; /* Consistent height */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text */
+}
+
+.therapeutic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+.therapeutic-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.card-divider {
+  height: 3px;
+  width: 50px;
+  background: var(--primary-color);
+  margin: 1rem auto; /* Center divider */
+}
+
+.therapeutic-card ul {
+  list-style: none;
+  padding: 0;
+  flex: 1;
+  width: 100%; /* Ensure list takes full width */
+}
+
+.area-item {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  text-align: left; /* Keep list items left-aligned for readability */
+}
+
+.area-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}

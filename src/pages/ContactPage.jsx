@@ -224,8 +224,9 @@ India </p>
               </form>
             </div>
             <div className="contact-map">
+              
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.489609110106!2d77.6530471777461!3d11.298880160220042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96e79e07f1c55%3A0xf0166908c2deb9b0!2s7MX5%2B9H3%2C%201%2C%20Veppampalayam%2C%20Erode%2C%20Tamil%20Nadu%20638112!5e0!3m2!1sen!2sin!4v1747058461672!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.286471560439!2d77.66603847481323!3d11.313759488869545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96e890f84bb29%3A0x4376ef0afaf9e23f!2sErode%20Cancer%20Centre!5e0!3m2!1sen!2sin!4v1747059445246!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

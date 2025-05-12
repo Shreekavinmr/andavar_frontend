@@ -79,7 +79,7 @@ const SectionHeading = ({ title, subtitle }) => {
 };
 
 // Enhanced Therapeutic Area Card Component
-const TherapeuticAreaCard = ({ category, areas, index }) => {
+const TherapeuticAreaCard = ({ category, areas, index, isOncology }) => {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
 
   return (
@@ -96,27 +96,26 @@ const TherapeuticAreaCard = ({ category, areas, index }) => {
     >
       <div
         ref={ref}
-        className={`therapeutic-card ${isVisible ? 'card-visible' : ''}`}
+        className={`therapeutic-card ${isVisible ? 'card-visible' : ''} ${
+          !isOncology ? 'coming-soon' : ''
+        }`}
       >
         <div className="card-overlay"></div>
         <div className="card-content">
           <h3>{category}</h3>
           <div className="card-divider"></div>
-          <ul>
-            {areas.length > 0 ? (
-              areas.map((area, idx) => (
+          {isOncology ? (
+            <ul>
+              {areas.map((area, idx) => (
                 <li key={idx} className="area-item">
                   <span className="area-line"></span>
                   {area}
                 </li>
-              ))
-            ) : (
-              <li className="area-item">
-                <span className="area-line"></span>
-                Specialized Research
-              </li>
-            )}
-          </ul>
+              ))}
+            </ul>
+          ) : (
+            <p className="coming-soon-text">Coming Soon</p>
+          )}
         </div>
       </div>
     </Tilt>
@@ -163,51 +162,27 @@ const TherapeuticAreasPage = () => {
       areas: ['Solid Tumors', 'Leukemia', 'Lymphoma', 'Sarcoma', 'Melanoma', 'Multiple Myeloma'],
     },
     {
-      category: 'Cardiology/Metabolism',
-      areas: ['Type 2 Diabetes Mellitus', 'Dyslipidemia', 'Obesity', 'Atrial Fibrillation', 'Acute Coronary Syndrome', 'Myocardial Infarction'],
-    },
-    {
       category: 'Neurology',
-      areas: ['Stroke', 'Epilepsy', 'Depression', 'Dementia', "Alzheimer's Disease", "Parkinson's Disease"],
-    },
-    {
-      category: 'Respiratory',
-      areas: ['Asthma', 'COPD', 'Pneumonia', 'Sepsis'],
-    },
-    {
-      category: 'Hematology',
-      areas: ['Anemia', 'Thrombocytopenia', 'Genetic Diseases', 'Stem Cell Therapy'],
-    },
-    {
-      category: 'Rheumatology and Orthopedics',
-      areas: ['Osteoarthritis', 'Osteoporosis', 'Arthritis', 'Rheumatoid Arthritis'],
-    },
-    {
-      category: 'Nephrology',
-      areas: ['Chronic Kidney Disease', 'Diabetic Nephropathy'],
-    },
-    {
-      category: 'Gynecology',
-      areas: ['Oral Contraceptives', 'Intrauterine Devices'],
-    },
-    {
-      category: 'Autoimmune Disorders',
-      areas: ['Systemic Lupus Erythematosus (SLE)', 'Inflammatory Bowel Disease', 'Multiple Sclerosis', 'Type 1 Diabetes Mellitus'],
-    },
-    {
-      category: 'Urology',
-      areas: ['Urinary Tract Infection', 'Hematuria'],
-    },
-    {
-      category: 'Dermatology',
-      areas: ['Psoriasis', 'Skin Infections'],
-    },
-    {
-      category: 'Epidemiology Studies',
       areas: [],
     },
     {
-      category: 'Observational Studies',
+      category: 'Respiratory',
+      areas: [],
+    },
+    {
+      category: 'Rheumatology and Orthopedics',
+      areas: [],
+    },
+    {
+      category: 'Nephrology',
+      areas: [],
+    },
+    {
+      category: 'Gynecology',
+      areas: [],
+    },
+    {
+      category: 'Dermatology',
       areas: [],
     },
     {
@@ -215,12 +190,8 @@ const TherapeuticAreasPage = () => {
       areas: [],
     },
     {
-      category: 'Ophthalmology',
-      areas: ['Diabetic Retinopathy', 'Cataract'],
-    },
-    {
-      category: 'Infectious Diseases',
-      areas: ['HIV', 'Vaccines'],
+      category: 'Diabetes',
+      areas: [],
     },
   ];
 
@@ -303,6 +274,7 @@ const TherapeuticAreasPage = () => {
                 category={area.category}
                 areas={area.areas}
                 index={index}
+                isOncology={area.category === 'Oncology'}
               />
             ))}
           </div>

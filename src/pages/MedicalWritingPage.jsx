@@ -238,7 +238,7 @@ const MedicalWritingPage = () => {
         </div>
       </section>
 
-      <section className="contact-section">
+      {/* <section className="contact-section">
         <div className="container">
           <div className="contact-content">
             <h2>Contact Us for Collaboration</h2>
@@ -255,7 +255,7 @@ India
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
