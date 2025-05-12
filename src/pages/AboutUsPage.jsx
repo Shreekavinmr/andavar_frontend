@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import {
   ArrowRight,
   Award,
-  Globe,
+  // Globe,
   Users,
-  Clock,
-  CheckCircle,
-  Target,
+  // Clock,
+  // CheckCircle,
+  // Target,
   Briefcase,
   Star,
   DollarSign,
@@ -56,76 +56,76 @@ const SectionHeading = ({ title, subtitle }) => {
 };
 
 // Timeline Event Component
-const TimelineEvent = ({ event, index }) => {
-  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+// const TimelineEvent = ({ event, index }) => {
+//   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
 
-  return (
-    <div
-      ref={ref}
-      className={`timeline-event ${index % 2 === 0 ? 'left' : 'right'} ${isVisible ? 'timeline-visible' : ''}`}
-    >
-      <div className="timeline-icon">
-        {event.icon}
-      </div>
-      <div className="timeline-content">
-        <div className="timeline-year">{event.year}</div>
-        <h3>{event.title}</h3>
-        <p>{event.description}</p>
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div
+//       ref={ref}
+//       className={`timeline-event ${index % 2 === 0 ? 'left' : 'right'} ${isVisible ? 'timeline-visible' : ''}`}
+//     >
+//       <div className="timeline-icon">
+//         {event.icon}
+//       </div>
+//       <div className="timeline-content">
+//         <div className="timeline-year">{event.year}</div>
+//         <h3>{event.title}</h3>
+//         <p>{event.description}</p>
+//       </div>
+//     </div>
+//   );
+// };
 
-// Timeline component for company history
-const Timeline = () => {
-  const timelineEvents = [
-    {
-      year: '2010',
-      title: 'Founded',
-      description: 'V&S Global Solutions was established with a vision to accelerate medical breakthroughs worldwide.',
-      icon: <Clock />,
-    },
-    {
-      year: '2012',
-      title: 'First Major Partnership',
-      description: 'Secured partnership with a leading pharmaceutical company for clinical trials across Asia.',
-      icon: <Users />,
-    },
-    {
-      year: '2015',
-      title: 'International Expansion',
-      description: 'Expanded operations to 25+ countries, establishing our global presence.',
-      icon: <Globe />,
-    },
-    {
-      year: '2018',
-      title: 'ISO Certification',
-      description: 'Achieved ISO 9001:2015 certification for our quality management systems.',
-      icon: <Award />,
-    },
-    {
-      year: '2021',
-      title: 'Research Breakthrough',
-      description: 'Contributed to a groundbreaking cancer treatment trial with 98% success rate.',
-      icon: <CheckCircle />,
-    },
-    {
-      year: '2024',
-      title: 'Today',
-      description: 'Operating in 50+ countries with over 500 clinical trials and 12,000+ patients enrolled.',
-      icon: <Target />,
-    },
-  ];
+// // Timeline component for company history
+// const Timeline = () => {
+//   const timelineEvents = [
+//     {
+//       year: '2010',
+//       title: 'Founded',
+//       description: 'V&S Global Solutions was established with a vision to accelerate medical breakthroughs worldwide.',
+//       icon: <Clock />,
+//     },
+//     {
+//       year: '2012',
+//       title: 'First Major Partnership',
+//       description: 'Secured partnership with a leading pharmaceutical company for clinical trials across Asia.',
+//       icon: <Users />,
+//     },
+//     {
+//       year: '2015',
+//       title: 'International Expansion',
+//       description: 'Expanded operations to 25+ countries, establishing our global presence.',
+//       icon: <Globe />,
+//     },
+//     {
+//       year: '2018',
+//       title: 'ISO Certification',
+//       description: 'Achieved ISO 9001:2015 certification for our quality management systems.',
+//       icon: <Award />,
+//     },
+//     {
+//       year: '2021',
+//       title: 'Research Breakthrough',
+//       description: 'Contributed to a groundbreaking cancer treatment trial with 98% success rate.',
+//       icon: <CheckCircle />,
+//     },
+//     {
+//       year: '2024',
+//       title: 'Today',
+//       description: 'Operating in 50+ countries with over 500 clinical trials and 12,000+ patients enrolled.',
+//       icon: <Target />,
+//     },
+//   ];
 
-  return (
-    <div className="timeline-container">
-      <div className="timeline-line"></div>
-      {timelineEvents.map((event, index) => (
-        <TimelineEvent key={index} event={event} index={index} />
-      ))}
-    </div>
-  );
-};
+//   return (
+//     <div className="timeline-container">
+//       <div className="timeline-line"></div>
+//       {timelineEvents.map((event, index) => (
+//         <TimelineEvent key={index} event={event} index={index} />
+//       ))}
+//     </div>
+//   );
+// };
 
 // Why Choose Us Card Component
 const ChooseUsCard = ({ icon, title, description }) => {
