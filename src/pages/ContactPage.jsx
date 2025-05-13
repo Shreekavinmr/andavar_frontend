@@ -150,7 +150,7 @@ India </p>
               </div>
               <h3>Email</h3>
               <p>
-                <a href="mailto:info@vsglobalsolutions.com">info@vsglobalsolutions.com</a>
+                <a href="mailto:V&sglobalbiosolutions.com">V&sglobalbiosolutions.com</a>
               </p>
             </div>
           </div>

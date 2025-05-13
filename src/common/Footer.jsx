@@ -122,17 +122,18 @@ const Footer = () => {
               <li className="contact-item">
                 <MapPin size={16} />
                 <span>
-                  123 Medical Plaza, Suite 500<br />
-                  Boston, MA 02108
+                  1/393/A, Veppampalayam,<br/>
+Erode, Tamil Nadu – 638012,<br/>
+India
                 </span>
               </li>
               <li className="contact-item">
                 <Phone size={16} />
-                <a href="tel:+18005551234">+1 (800) 555-1234</a>
+                <a href="tel:+18005551234">+91 9080108558</a>
               </li>
               <li className="contact-item">
                 <Mail size={16} />
-                <a href="mailto:contact@vsglobalsolutions.com">contact@vsglobalsolutions.com</a>
+                <a href="mailto:V&sglobalbiosolutions.com">V&sglobalbiosolutions.com</a>
               </li>
             </ul>
           </div>

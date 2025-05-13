@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, FileText, Microscope, ChartBar, Globe, Building } from 'lucide-react';
+import { ArrowRight, FileText, Microscope, Globe, Building } from 'lucide-react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import '../styles/HomePage.css';
@@ -24,12 +24,12 @@ const AnimatedServicesSection = () => {
       description: "Efficient coordination and oversight of clinical trial sites to ensure compliance and quality.",
       link: "/services/site-management"
     },
-    {
-      icon: <ChartBar className="service-icon" />,
-      title: "Biostatistics",
-      description: "Advanced statistical analysis to derive meaningful insights from clinical trial data.",
-      link: "/services/biostatistics"
-    },
+    // {
+    //   icon: <ChartBar className="service-icon" />,
+    //   title: "Biostatistics",
+    //   description: "Advanced statistical analysis to derive meaningful insights from clinical trial data.",
+    //   link: "/services/biostatistics"
+    // },
     {
       icon: <Globe className="service-icon" />,
       title: "Global Research Coordination",
