@@ -57,9 +57,9 @@ const StatCounter = ({ number, label }) => {
 
 const HomePage = () => {
   const stats = [
-    { number: "500+", label: "Clinical Trials" },
-    { number: "50+", label: "Countries" },
-    { number: "12000+", label: "Patients Enrolled" },
+    { number: "80+", label: "Clinical Trials" },
+    { number: "800+", label: "Cases" },
+    { number: "6+", label: "Sponsoring Countries" },
     { number: "98%", label: "Client Retention" }
   ];
 
