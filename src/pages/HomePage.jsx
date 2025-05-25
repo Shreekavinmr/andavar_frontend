@@ -214,14 +214,14 @@ const HomePage = () => {
               <div className="course-card">
                 <h3>Online Clinical Research Course</h3>
                 <p>Flexible, self-paced learning to master clinical research methodologies and regulations.</p>
-                <a href="/online-course" className="course-link">
+                <a href="/courses" className="course-link">
                   Explore Course <ArrowRight size={18} />
                 </a>
               </div>
               <div className="course-card">
                 <h3>Institution of Clinical Research</h3>
                 <p>Comprehensive in-person training with hands-on experience and industry insights.</p>
-                <a href="/institution" className="course-link">
+                <a href="/courses" className="course-link">
                   Learn More <ArrowRight size={18} />
                 </a>
               </div>

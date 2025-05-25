@@ -8,7 +8,7 @@ const ServicesSection = () => {
       icon: <Microscope className="service-icon" />,
       title: "Clinical Trial Management",
       description: "Comprehensive design and execution of clinical trials with a focus on patient safety and data integrity.",
-      link: "/services/clinical-trials"
+      link: "/services/trial-management"
     },
     {
       icon: <FileText className="service-icon" />,

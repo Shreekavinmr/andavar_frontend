@@ -202,7 +202,7 @@ const MedicalWritingPage = () => {
             </div>
             <h1>Medical Writing: Clear Communication of Medical Information</h1>
             <p>
-              Our medical writing team delivers precise clinical trial documents and regulatory submissions, supporting your trial from development to approval.
+              At V & S Global Solutions, we specialize in providing expert Medical Writing services that deliver clear, precise, and regulatory-compliant documentation to support clinical trials, regulatory submissions, and scientific communications. Our skilled team meticulously crafts a comprehensive array of documents—including study protocols, informed consent forms, clinical study reports, and regulatory dossiers—customized for the pharmaceutical, ayurvedic, biotechnology, and medical device sectors. Adhering rigorously to international standards such as ICH-GCP, FDA, EMA, and CDSCO, we ensure the highest level of quality, consistency, and compliance in every deliverable.
             </p>
           </div>
         </div>

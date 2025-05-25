@@ -63,6 +63,8 @@ const Header = () => {
         { title: 'Clinical Data Management', link: '/services/data-management' },
         { title: 'Clinical Trial Supplies', link: '/services/trial-supplies' },
         { title: 'Medical Writing', link: '/services/medical-writing' },
+        { title: 'Clinical Trial Management', link: '/services/trial-management' },
+        { title: 'Global Research Coordination', link: '/services/global-research' },
         // { title: 'Biostatistics', link: '/services/biostatistics' }
       ]
     },

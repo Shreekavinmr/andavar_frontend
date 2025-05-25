@@ -15,6 +15,8 @@ import ClinicalDataManagementPage from './pages/ClinicalDataManagementPage';
 import ClinicalTrialSuppliesPage from './pages/ClinicalTrialSuppliesPage';
 import MedicalWritingPage from './pages/MedicalWritingPage';
 import BiostatisticsAndAnalyticsPage from './pages/BiostatisticsAndAnalyticsPage';
+import ClinicalTrialManagementPage from './pages/ClinicalTrialManagement';
+import GlobalResearchCoordinationPage from './pages/GlobalResearchCoordinationPage';
 // Import styles
 import './App.css';
 
@@ -35,6 +37,8 @@ function App() {
           <Route path='/services/trial-supplies' element={<ClinicalTrialSuppliesPage/>}/>
           <Route path='/services/medical-writing' element={<MedicalWritingPage/>}/>
           <Route path='/services/biostatistics' element={<BiostatisticsAndAnalyticsPage/>}/>
+          <Route path='/services/trial-management' element={<ClinicalTrialManagementPage/>}/>
+          <Route path='/services/global-research' element={<GlobalResearchCoordinationPage/>}/>
         </Routes>
         <Footer />
       </div>
