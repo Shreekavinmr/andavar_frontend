@@ -19,7 +19,7 @@ const ContactPage = () => {
     e.preventDefault();
     setIsLoading(true);
     setStatus('');
-    const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:5000'; 
+    const BACKEND_URL = process.env.BACKEND_URL; 
 
     try {
       const response = await fetch(`${BACKEND_URL}/api/contact`, {

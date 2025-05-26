@@ -139,7 +139,7 @@ const CareersPage = () => {
     formDataToSend.append('resume', resumeFile);
     formDataToSend.append('secretKey', 'fghjnwri7653r2rghjebfh'); 
 
-    const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:5000'; 
+    const BACKEND_URL = process.env.BACKEND_URL; 
 
 
     try {
