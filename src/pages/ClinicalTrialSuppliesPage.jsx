@@ -23,7 +23,15 @@ const SupplyChainOverview = () => {
           <div className="supply-chain-points">
             <div className="point">
               <span className="point-icon">1</span>
-              <p>Delivery of clinical trial supplies including investigational as well as non-investigational medical products.</p>
+              <p>
+                <a
+                  href="https://www.falconebiz.com/company/DISPODOC-PRIVATE-LIMITED-U46596TN2025PTC176398"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Delivery of clinical trial supplies including investigational as well as non-investigational medical products.
+                </a>
+                </p>
             </div>
             <div className="point">
               <span className="point-icon">2</span>
