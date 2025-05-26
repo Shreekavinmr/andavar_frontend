@@ -147,7 +147,7 @@ const ClinicalDataManagementPage = () => {
             <p>
               For more details or to discuss your clinical trial needs, reach us at{' '}
               <a href="tel:+919080108558">+91 9080108558</a> or mail us at{' '}
-              <a href="mailto:V&sglobalbiosolutions.com">V&sglobalbiosolutions.com</a>.
+              <a href="mailto:v.sglobal2025@gmail.com">v.sglobal2025@gmail.com</a>.
             </p>
             <p>
                <strong>Office Address:</strong><br/>

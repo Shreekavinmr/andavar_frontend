@@ -133,7 +133,7 @@ India
               </li>
               <li className="contact-item">
                 <Mail size={16} />
-                <a href="mailto:V&sglobalbiosolutions.com">V&sglobalbiosolutions.com</a>
+                <a href="mailto:v.sglobal2025@gmail.com">v.sglobal2025@gmail.com</a>
               </li>
             </ul>
           </div>

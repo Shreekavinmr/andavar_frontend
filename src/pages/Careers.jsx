@@ -315,7 +315,7 @@ const CareersPage = () => {
             <h2>Contact Our HR Team</h2>
             <p>
               For inquiries about job openings or the application process, reach us at{' '}
-              <a href="mailto:V&sglobalbiosolutions.com">V&sglobalbiosolutions.com</a> or call{' '}
+              <a href="mailto:v.sglobal2025@gmail.com">v.sglobal2025@gmail.com</a> or call{' '}
               <a href="tel:+919080108558">+91 9080108558</a>.
             </p>
             <p>
