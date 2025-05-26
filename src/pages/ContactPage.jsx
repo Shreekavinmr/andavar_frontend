@@ -19,16 +19,17 @@ const ContactPage = () => {
     e.preventDefault();
     setIsLoading(true);
     setStatus('');
+    const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:5000'; 
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch(`${BACKEND_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           ...formData,
-          secretKey: 'fghjnwri7653r2rghjebfh', // Hardcoded secret key
+          secretKey: 'fghjnwri7653r2rghjebfh', 
         }),
       });
 

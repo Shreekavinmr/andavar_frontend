@@ -139,8 +139,11 @@ const CareersPage = () => {
     formDataToSend.append('resume', resumeFile);
     formDataToSend.append('secretKey', 'fghjnwri7653r2rghjebfh'); 
 
+    const BACKEND_URL = process.env.BACKEND_URL || 'http://localhost:5000'; 
+
+
     try {
-      const response = await fetch('http://localhost:5000/api/apply', {
+      const response = await fetch(`${BACKEND_URL}/api/apply`, {
         method: 'POST',
         body: formDataToSend,
       });
