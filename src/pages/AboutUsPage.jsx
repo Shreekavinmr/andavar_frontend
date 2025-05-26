@@ -144,52 +144,52 @@ const ChooseUsCard = ({ icon, title, description }) => {
 };
 
 // Team Member Card Component
-const TeamMemberCard = ({ name, role, image }) => {
-  const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+// const TeamMemberCard = ({ name, role, image }) => {
+//   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
 
-  return (
-    <div
-      ref={ref}
-      className={`team-member-card ${isVisible ? 'member-visible' : ''}`}
-    >
-      <div className="member-image">
-        <img src={image} alt={name} />
-        <div className="member-overlay"></div>
-      </div>
-      <div className="member-info">
-        <h3>{name}</h3>
-        <p>{role}</p>
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div
+//       ref={ref}
+//       className={`team-member-card ${isVisible ? 'member-visible' : ''}`}
+//     >
+//       <div className="member-image">
+//         <img src={image} alt={name} />
+//         <div className="member-overlay"></div>
+//       </div>
+//       <div className="member-info">
+//         <h3>{name}</h3>
+//         <p>{role}</p>
+//       </div>
+//     </div>
+//   );
+// };
 
 // Main About Us Page Component
 const AboutUsPage = () => {
   const [missionRef, missionVisible] = useIntersectionObserver({ threshold: 0.1 });
 
-  const teamMembers = [
-    {
-      name: "Dr. Sarah Johnson",
-      role: "Founder & CEO",
-      image: "/assets/images/leader_1.jpeg",
-    },
-    {
-      name: "Dr. Michael Chen",
-      role: "Chief Scientific Officer",
-      image: "/assets/images/leader_2.jpeg",
-    },
-    {
-      name: "Dr. Emily Rodriguez",
-      role: "Head of Clinical Operations",
-      image: "/assets/images/leader_3.jpeg",
-    },
-    {
-      name: "Dr. James Wilson",
-      role: "Director of Research",
-      image: "/assets/images/leader_5.jpg",
-    },
-  ];
+  // const teamMembers = [
+  //   {
+  //     name: "Dr. Sarah Johnson",
+  //     role: "Founder & CEO",
+  //     image: "/assets/images/leader_1.jpeg",
+  //   },
+  //   {
+  //     name: "Dr. Michael Chen",
+  //     role: "Chief Scientific Officer",
+  //     image: "/assets/images/leader_2.jpeg",
+  //   },
+  //   {
+  //     name: "Dr. Emily Rodriguez",
+  //     role: "Head of Clinical Operations",
+  //     image: "/assets/images/leader_3.jpeg",
+  //   },
+  //   {
+  //     name: "Dr. James Wilson",
+  //     role: "Director of Research",
+  //     image: "/assets/images/leader_5.jpg",
+  //   },
+  // ];
 
   const whyChooseUs = [
     {
@@ -298,26 +298,6 @@ const AboutUsPage = () => {
         </div>
       </section> */}
 
-      {/* Core Values Section */}
-      <section className="values-section">
-        <div className="animated-bg values-animated-bg"></div>
-        <div className="container">
-          <SectionHeading
-            title="Our Core Values"
-            subtitle="Principles that guide our work and culture"
-          />
-          <div className="choose-us-grid">
-            {whyChooseUs.map((item, index) => (
-              <ChooseUsCard
-                key={index}
-                icon={item.icon}
-                title={item.title}
-                description={item.description}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="cta-section">
@@ -348,8 +328,29 @@ const AboutUsPage = () => {
         </div>
       </section>
 
+      {/* Core Values Section */}
+      <section className="values-section">
+        <div className="animated-bg values-animated-bg"></div>
+        <div className="container">
+          <SectionHeading
+            title="Our Core Values"
+            subtitle="Principles that guide our work and culture"
+          />
+          <div className="choose-us-grid">
+            {whyChooseUs.map((item, index) => (
+              <ChooseUsCard
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Team Section */}
-      <section className="team-section">
+      {/* <section className="team-section">
         <div className="animated-bg team-animated-bg"></div>
         <div className="container">
           <SectionHeading
@@ -367,7 +368,7 @@ const AboutUsPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
