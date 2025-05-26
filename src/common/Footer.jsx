@@ -144,9 +144,7 @@ India
             © {new Date().getFullYear()} V&S Global Solutions. All rights reserved.
           </div>
           <div className="footer-legal">
-            <a href="/privacy-policy" className="legal-link">Privacy Policy</a>
-            <a href="/terms-of-service" className="legal-link">Terms of Service</a>
-            <a href="/cookies" className="legal-link">Cookies Policy</a>
+            <a href="https://www.instagram.com/webnd.digi?igsh=em1ocHowZmJyM2Fj" className="legal-link">Developed By Webnd Digi</a>
           </div>
         </div>
       </div>
