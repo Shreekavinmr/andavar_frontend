@@ -84,7 +84,7 @@ const Header = () => {
               <img src="/assets/images/logo.png" alt="V&S Logo" className="company-logo" />
             </div>
             <div className="logo-text">
-              <span className="primary">V&S Global Solutions</span>
+              <span className="primary">V&S Global Solutions LLP</span>
               <span className="secondary">Clinical Excellence</span>
             </div>
           </a>

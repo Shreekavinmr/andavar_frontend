@@ -161,6 +161,26 @@ const TherapeuticAreasPage = () => {
       category: 'Oncology',
       areas: ['Solid Tumors', 'Leukemia', 'Lymphoma', 'Sarcoma', 'Melanoma', 'Multiple Myeloma'],
     },
+    
+    {
+      category: 'Rheumatology and Orthopedics',
+      areas: ['Osteoarthritis','Osteoporosis','Arthritis','Rheumatoid Arthritis'],
+    },
+    {
+      category: 'Gynecology',
+      areas: ['Fertility','Oral Contraceptives','Intrauterine Devices'],
+    },
+    
+    {
+      category: 'Ayurvedic',
+      areas: [
+    'Digestive Health',
+    'Immunity Boosting',
+    'Stress & Anxiety Relief',
+    'Skin & Hair Care',
+    'Detoxification (Panchakarma)',
+  ],
+    },
     {
       category: 'Neurology',
       areas: [],
@@ -170,23 +190,11 @@ const TherapeuticAreasPage = () => {
       areas: [],
     },
     {
-      category: 'Rheumatology and Orthopedics',
-      areas: [],
-    },
-    {
       category: 'Nephrology',
       areas: [],
     },
     {
-      category: 'Gynecology',
-      areas: [],
-    },
-    {
       category: 'Dermatology',
-      areas: [],
-    },
-    {
-      category: 'Ayurveda Studies',
       areas: [],
     },
     {
@@ -274,7 +282,7 @@ const TherapeuticAreasPage = () => {
                 category={area.category}
                 areas={area.areas}
                 index={index}
-                isOncology={area.category === 'Oncology'}
+                isOncology={area.category === 'Oncology' || area.category==='Gynecology' || area.category==='Rheumatology and Orthopedics' || area.category==='Ayurvedic'}
               />
             ))}
           </div>

@@ -236,6 +236,7 @@
   
   .therapeutic-card {
     background: white;
+    height: 25rem;
     border-radius: var(--border-radius);
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
