@@ -85,7 +85,7 @@ const Header = () => {
             </div>
             <div className="logo-text">
               <span className="primary">V&S Global Solutions LLP</span>
-              <span className="secondary">Clinical Excellence</span>
+              <span className="secondary">Advancing Global Health</span>
             </div>
           </a>
         </div>
