@@ -112,7 +112,8 @@ const Footer = () => {
               <li><a href="/services/data-management" className="footer-link">Clinical Data Management <ArrowUpRight size={14} /></a></li>
               <li><a href="/services/trial-supplies" className="footer-link">Clinical Trial Supplies <ArrowUpRight size={14} /></a></li>
               <li><a href="/services/medical-writing" className="footer-link">Medical Writing <ArrowUpRight size={14} /></a></li>
-              <li><a href="/services/biostatistics" className="footer-link">Biostatistics & Analytics <ArrowUpRight size={14} /></a></li>
+              <li><a href="/services/trial-management" className="footer-link">Clinical Trial Management<ArrowUpRight size={14} /></a></li>
+              <li><a href="/services/global-research" className="footer-link">Global Research Coordination <ArrowUpRight size={14} /></a></li>
             </ul>
           </div>
 

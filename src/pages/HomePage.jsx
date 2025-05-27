@@ -93,7 +93,7 @@ const HomePage = () => {
         <p>V&S Global Solutions delivers innovative and reliable clinical research services to advance healthcare outcomes and improve patient lives across the globe.</p>
         
         <div class="hero-buttons">
-          <a href="/services" class="button primary-button">
+          <a href="/services/site-management" class="button primary-button">
             Explore Our Services
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14"></path>
