@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/ContactPage.css';
+import HeroSection from './HeroSection';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,12 @@ const ContactPage = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState('');
+    const stats = [
+    { number: "12+", label: "Unique Flavours" },
+    { number: "3", label: "Premium Brands" },
+    { number: "15+", label: "Years of Excellence" },
+    { number: "100%", label: "Customer Satisfaction" },
+  ];
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -47,39 +54,18 @@ const ContactPage = () => {
       setIsLoading(false);
     }
   };
+    const partners = [
+    { name: "Dhool", logo: "/assets/images/logo3.png" },
+    { name: "Tizzo", logo: "/assets/images/logo1.png" },
+    { name: "Andavar Plus", logo: "/assets/images/logo.png" },
+    { name: "Aslee", logo: "/assets/images/logo4.png" },
+  ];
 
   return (
     <div className="contact-page">
-      <section className="hero-section">
-        <div className="shape shape-1"></div>
-        <div className="shape shape-2"></div>
-        <div className="dots-pattern dots-1"></div>
-        <div className="dots-pattern dots-2"></div>
-        <div className="container">
-          <div className="hero-content">
-            <div className="hero-badge">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-              </svg>
-              Get in Touch
-            </div>
-            <h1>Contact V&S Global Solutions</h1>
-            <p>
-              Reach out to us for inquiries about our clinical research training programs or any other information.
-            </p>
-          </div>
-        </div>
-      </section>
+      
+      {/* Hero Section */}
+      <HeroSection stats={stats} />
 
       <section className="contact-info-section">
         <div className="container">
@@ -106,10 +92,7 @@ const ContactPage = () => {
                 </svg>
               </div>
               <h3>Address</h3>
-              <p>
-1/393/A, Veppampalayam,<br/>
-Erode, Tamil Nadu – 638012,<br/>
-India </p>
+              <p>39-B, Sanjeevi Nagar,Chennai By pass Road, <br/>Tiruchirappalli, TamilNadu 620002 ,<br/>India.</p>
             </div>
             <div className="contact-info-card">
               <div className="contact-icon">
@@ -129,7 +112,7 @@ India </p>
               </div>
               <h3>Phone</h3>
               <p>
-                <a href="tel:+919080108558">+91 9080108558</a>
+                <a href="tel:+919597909179">+91 9597909179</a>
               </p>
             </div>
             <div className="contact-info-card">
@@ -151,7 +134,7 @@ India </p>
               </div>
               <h3>Email</h3>
               <p>
-                <a href="mailto:v.sglobal2025@gmail.com">v.sglobal2025@gmail.com</a>
+                <a href="mailto:info@andavarplus.com">info@andavarplus.com</a>
               </p>
             </div>
           </div>
@@ -227,7 +210,7 @@ India </p>
             <div className="contact-map">
               
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.286471560439!2d77.66603847481323!3d11.313759488869545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96e890f84bb29%3A0x4376ef0afaf9e23f!2sErode%20Cancer%20Centre!5e0!3m2!1sen!2sin!4v1747059445246!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125399.48449816402!2d78.5500280972656!3d10.831665200000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf508de7fca21%3A0x5116c87abf6891c!2sAndavar%20Drinking%20Water!5e0!3m2!1sen!2sin!4v1764173287839!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -235,6 +218,25 @@ India </p>
                 loading="lazy"
                 title="V&S Global Solutions Location"
               ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+             <section className="partners-section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Our Brands</h2>
+            <p>
+              A vibrant portfolio of beverages trusted for their flavour, purity and quality.
+            </p>
+          </div>
+          <div className="partners-carousel">
+            <div className="partners-track">
+              {partners.concat(partners).map((partner, index) => (
+                <div key={index} className="partner-logo">
+                  <img src={partner.logo} alt={`${partner.name} logo`} />
+                </div>
+              ))}
             </div>
           </div>
         </div>

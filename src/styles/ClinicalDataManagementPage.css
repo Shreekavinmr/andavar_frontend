@@ -1,15 +1,20 @@
 :root {
-    --primary-color: #cd5e77;
-    --primary-dark: #b54e66;
-    --secondary-color: #64748b;
-    --accent-color: #ee959e;
-    --light-bg: #fdf5f7;
-    --dark-bg: #cd5e77;
-    --text-color: #1e293b;
-    --light-text: #fdf5f7;
-    --border-radius: 8px;
-    --transition: all 0.3s ease;
-  }
+  --primary-color: #26306A;        /* Dark Navy Blue */
+  --primary-dark: #1E2755;         /* Darker Navy for hover/active */
+  --secondary-color: #3B4A8C;      /* Soft Navy/Muted Blue for secondary UI */
+  
+  --accent-color: #F26D25;         /* Primary Orange Accent */
+  --accent-light: #FF8A55;         /* Soft Light Orange for hovers */
+
+  --light-bg: #FAF4F3;             /* Smoky White Background */
+  --dark-bg: #26306A;              /* Navy Background (buttons/sections) */
+
+  --text-color: #1A2140;           /* Deep Navy Text */
+  --light-text: #FFFFFF;           /* White text for dark backgrounds */
+
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
   
   @keyframes slideUp {
     from { opacity: 0; transform: translateY(50px); }
@@ -28,8 +33,8 @@
   }
   
   @keyframes glow {
-    0%, 100% { box-shadow: 0 0 10px rgba(205, 94, 119, 0.3); }
-    50% { box-shadow: 0 0 20px rgba(205, 94, 119, 0.5); }
+    0%, 100% { box-shadow: 0 0 10px rgba(242, 109, 37, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(242, 109, 37, 0.5); }
   }
   
   .animate-slide-up {
@@ -74,7 +79,7 @@
   .hero-badge {
     display: inline-flex;
     align-items: center;
-    background-color: rgba(205, 94, 119, 0.1);
+    background-color: rgba(242, 109, 37, 0.1);
     color: var(--primary-color);
     padding: 0.5rem 1rem;
     border-radius: 50px;
@@ -91,7 +96,7 @@
   .hero-content h1 {
     font-size: 2.75rem;
     font-weight: 800;
-    line-height: '!important' 1.2;
+    line-height: 1.2;
     margin-bottom: 1.25rem;
     background: linear-gradient(90deg, #2C3E50, #4A6B8A);
     -webkit-background-clip: text;
@@ -185,7 +190,7 @@
   
   .services-section {
     padding: 7rem 0;
-    background: linear-gradient(180deg, var(--light-bg), rgba(205, 94, 119, 0.05));
+    background: linear-gradient(180deg, var(--light-bg), rgba(242, 109, 37, 0.05));
   }
   
   .services-grid {
@@ -199,7 +204,7 @@
     border-radius: var(--border-radius);
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(205, 94, 119, 0.1);
+    border: 1px solid rgba(242, 109, 37, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     animation: glow 2s ease-in-out infinite;
@@ -214,7 +219,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(205, 94, 119, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(242, 109, 37, 0.2), transparent);
     transition: 0.5s;
   }
   

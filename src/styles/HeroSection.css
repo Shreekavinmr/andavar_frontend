@@ -1,0 +1,276 @@
+/* ============================================
+   FULL HERO BANNER SLIDER (ENTIRE SECTION)
+   ============================================ */
+.hero-slider {
+  position: relative;
+  background-color: #FAF4F3;
+  
+  /* FULL SCREEN WIDTH CENTERED */
+  width: 90vw;
+  min-height: 90vh;
+  height: 50vh;
+  overflow: hidden;
+
+  margin-left: auto;  /* Add this */
+  margin-right: auto;
+  margin-top: 120px;
+  border-radius: 44px;
+  
+}
+@media (max-width: 768px) {
+  .hero-slider {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .hero-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-slider {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+/* --------------------------------------------
+   SLIDES
+-------------------------------------------- */
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+  transform: translateX(10%);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+
+  pointer-events: none;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 3;
+  pointer-events: auto;
+}
+
+.hero-slide.prev {
+  opacity: 0;
+  transform: translateX(-10%);
+  z-index: 2;
+}
+
+.hero-slide.next {
+  opacity: 0;
+  transform: translateX(10%);
+  z-index: 1;
+}
+
+/* --------------------------------------------
+   INNER CONTENT WRAPPER
+-------------------------------------------- */
+
+.hero-container {
+  position: relative;
+  z-index: 3;
+
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  /* LEFT/RIGHT PADDING */
+  padding-left: 80px;
+  padding-right: 80px;
+
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* --------------------------------------------
+   HERO CONTENT (TEXT)
+-------------------------------------------- */
+
+.hero-content {
+  max-width: 460px;
+  color: #ffffff;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+
+.hero-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  opacity: 0.92;
+  margin-bottom: 1.8rem;
+}
+
+/* --------------------------------------------
+   BUTTONS
+-------------------------------------------- */
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons .button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+
+.primary-button {
+  background: #fff;
+  color: #26306A;
+}
+
+.primary-button:hover {
+  background: #f1f1f1;
+}
+
+.secondary-button {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.secondary-button:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* --------------------------------------------
+   HERO STATS
+-------------------------------------------- */
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-stats .stat-item {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stats .stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.hero-stats .stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* --------------------------------------------
+   SWITCH ARROWS
+-------------------------------------------- */
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+
+  z-index: 20;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.25s ease;
+}
+
+.hero-arrow:hover {
+  background: rgba(0,0,0,0.55);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.hero-arrow-left {
+  left: 30px;
+}
+
+.hero-arrow-right {
+  right: 30px;
+}
+
+/* --------------------------------------------
+   DOTS
+-------------------------------------------- */
+
+.hero-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: 1px solid #fff;
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.dot.active {
+  width: 30px;
+  border-radius: 10px;
+  background: white;
+}

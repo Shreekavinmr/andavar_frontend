@@ -1,7 +1,8 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import '../styles/HomePage.css';
-import AnimatedServicesSection from './AnimatedServicesSection';
+import React from "react";
+import { ArrowRight } from "lucide-react";
+import "../styles/HomePage.css";
+import AnimatedServicesSection from "./AnimatedServicesSection";
+import HeroSection from "./HeroSection";
 
 const StatCounter = ({ number, label }) => {
   const [count, setCount] = React.useState(0);
@@ -10,8 +11,8 @@ const StatCounter = ({ number, label }) => {
 
   React.useEffect(() => {
     let observer;
-    const targetNumber = parseInt(number.replace(/[^0-9]/g, ''));
-    const suffix = number.replace(/[0-9]/g, '');
+    const targetNumber = parseInt(number.replace(/[^0-9]/g, ""), 10);
+    const suffix = number.replace(/[0-9]/g, "");
 
     const startCounting = () => {
       let start = 0;
@@ -56,85 +57,25 @@ const StatCounter = ({ number, label }) => {
 };
 
 const HomePage = () => {
-  const stats = [
-    { number: "80+", label: "Clinical Trials" },
-    { number: "800+", label: "Cases" },
-    { number: "6+", label: "Sponsoring Countries" },
-    { number: "98%", label: "Client Retention" }
-  ];
-
+ const stats = [
+  { number: "15+", label: "Unique Flavours" },
+  { number: "3", label: "Premium Brands" },
+  { number: "20+", label: "Years of Excellence" },
+  { number: "100%", label: "Customer Satisfaction" },
+];
   const partners = [
-    { name: "Erode Cancer Center", logo: "/assets/images/scroll_1.png" },
-    { name: "IMed Speciality Hospital", logo: "/assets/images/scroll_2.jpeg" },
-    { name: "Bangalore Cancer Center", logo: "/assets/images/scroll_3.jpeg" },
-    { name: "Universal Cancer Hospital", logo: "/assets/images/scroll_4.png" },
-    { name: "Sri Narayani Hospital and Research", logo: "/assets/images/scroll_5.jpg" },
+    { name: "Dhool", logo: "/assets/images/logo3.png" },
+    { name: "Tizzo", logo: "/assets/images/logo1.png" },
+    { name: "Andavar Plus", logo: "/assets/images/logo.png" },
+    { name: "Aslee", logo: "/assets/images/logo4.png" },
   ];
 
   return (
     <div className="homepage">
-      <section class="hero-section">
-  <div class="shape shape-1"></div>
-  <div class="shape shape-2"></div>
-  <div class="dots-pattern dots-1"></div>
-  <div class="dots-pattern dots-2"></div>
-  
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-          </svg>
-          Advancing Global Health
-        </div>
-        
-        <h1>Accelerating Medical Breakthroughs Worldwide</h1>
-        <p>V&S Global Solutions delivers innovative and reliable clinical research services to advance healthcare outcomes and improve patient lives across the globe.</p>
-        
-        <div class="hero-buttons">
-          <a href="/services/site-management" class="button primary-button">
-            Explore Our Services
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14"></path>
-              <path d="M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
-          <a href="/contact" class="button secondary-button">Contact Us</a>
-        </div>
-        
-        <div class="hero-stats">
-          
-          <div class="stat-item">
-          </div>
-          <div class="stat-item">
-          </div>
-        </div>
-      </div>
-      
-      {/* <div class="image-grid">
-        <div class="image-plus">
-          <div class="image-item">
-            <img src="assets/images/vs_2.jpg" alt="Primary clinical research" />
-          </div>
-          <div class="image-item">
-            <img src="assets/images/vs_6.jpeg" alt="Modern medical equipment" />
-          </div>
-          <div class="image-item">
-            <img src="assets/images/vs_3.jpg" alt="Team collaboration" />
-          </div>
-          <div class="image-item">
-            <img src="assets/images/vs_4.jpg" alt="Clinical trial process" />
-          </div>
-          <div class="image-item">
-            <img src="assets/images/vs_7.jpg" alt="Global healthcare innovation" />
-          </div>
-        </div>
-      </div> */}
-    </div>
-  </div>
-</section>
+      {/* ================= HERO SECTION ================= */}
+      <HeroSection stats={stats} />
 
+      {/* ================= ABOUT PREVIEW ================= */}
       <section className="about-preview-section">
         <div className="animated-bg about-animated-bg">
           <div className="about-dots-l1"></div>
@@ -147,12 +88,41 @@ const HomePage = () => {
         <div className="container">
           <div className="about-content">
             <div className="about-image">
-              <img src="/assets/images/meet_clinical.jpg" alt="Clinical research team meeting" />
+              <img
+                src="/assets/images/logo.png"
+                alt="Clinical research team meeting"
+              />
             </div>
             <div className="about-text">
               <h2>Who We Are</h2>
-              <p>V&S Global Solutions is an integrated clinical research solution for pharmaceutical, ayurveda, biotechnology companies, and medical device producers. We have a long track record of evaluating the safety and efficacy of drugs and medical devices across a wide range of therapeutic indications.</p>
-              <p>V&S Global Solutions operates in adherence to national and international regulatory requirements. Our centers are in compliance with ICH-GCP and other applicable regulatory guidelines. We focus on quality delivery of clinical trials to our clients by implementing various strategies and focus to ensure timely execution of clinical projects within the budget.</p>
+
+              <p>
+                We are a multi-brand beverage company offering a complete range
+                of soft drinks and purified drinking water trusted by families
+                and businesses. Our flagship brands
+                <strong>Aslee, Tizzo</strong> and <strong>Dhool</strong> deliver
+                a colourful variety of refreshing flavours including
+                <strong>
+                  Mango, Apple, Clear Lemon, Cloud Lemon, Orange, Grape, Milk
+                  Paneer, Clear Paneer, Cola, Jeera, Pineapple, Red Berry
+                </strong>{" "}
+                and <strong>Lemon Salt Soda</strong>. Each drink is crafted with
+                care to provide consistent taste, vibrant flavour and
+                high-quality ingredients.
+              </p>
+
+              <p>
+                Beyond soft drinks, we also produce premium packaged drinking
+                water under
+                <strong>Andavar Plus</strong> and <strong>Tizzo Water</strong>,
+                available in <strong>300ml, 500ml, 1000ml, 2000ml</strong> and{" "}
+                <strong>5000ml</strong> sizes. With advanced purification,
+                hygienic production and strict quality control, we strive to
+                deliver beverages that ensure purity, freshness and satisfaction
+                for every occasion. Our mission is to bring safe, tasty and
+                affordable refreshment to everyone we serve.
+              </p>
+
               <a href="/about" className="about-link">
                 More About Us <ArrowRight size={16} />
               </a>
@@ -161,80 +131,29 @@ const HomePage = () => {
         </div>
       </section>
 
-
+            {/* ================= STATS ================= */}
       <section className="stats-section">
         <div className="container">
           <div className="stats-grid">
             {stats.map((stat, index) => (
-              <StatCounter key={index} number={stat.number} label={stat.label} />
+              <StatCounter
+                key={index}
+                number={stat.number}
+                label={stat.label}
+              />
             ))}
           </div>
         </div>
       </section>
 
-
-      <AnimatedServicesSection />
-
-      <section className="cta-section">
-        <div className="animated-bg cta-animated-bg">
-          <div className="cta-telescope cta-telescope-1"></div>
-          <div className="cta-telescope cta-telescope-2"></div>
-          <div className="cta-orbit cta-orbit-1"></div>
-          <div className="cta-orbit cta-orbit-2"></div>
-          <div className="cta-particle cta-particle-1"></div>
-          <div className="cta-particle cta-particle-2"></div>
-          <div className="cta-glow cta-glow-1"></div>
-          <div className="cta-glow cta-glow-2"></div>
-        </div>
-        <div className="container">
-          <div className="cta-content">
-            <h2>Partner with Us for Cutting-Edge Research</h2>
-            <p>
-              At V&S Global Solutions, we specialize in transforming complex clinical challenges into breakthrough solutions. 
-              Our team of expert researchers and state-of-the-art methodologies ensure every project is handled with scientific 
-              precision and ethical integrity. From early-phase trials to regulatory submissions, we help you navigate the path 
-              to successful outcomes — faster and smarter.
-            </p>
-            <a href="/contact" className="cta-button">
-              Start Your Project
-              <ArrowRight size={20} />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="courses-section">
-        <div className="courses-container">
-          <div className="courses-content">
-            <div className="courses-text">
-              <h2>Clinical Research Courses</h2>
-              <p>Empowering the next generation of clinical research professionals with advanced training programs designed to build expertise and drive innovation.</p>
-            </div>
-            <div className="courses-cards">
-              <div className="course-card">
-                <h3>Online Clinical Research Course</h3>
-                <p>Flexible, self-paced learning to master clinical research methodologies and regulations.</p>
-                <a href="/courses" className="course-link">
-                  Explore Course <ArrowRight size={18} />
-                </a>
-              </div>
-              <div className="course-card">
-                <h3>Institution of Clinical Research</h3>
-                <p>Comprehensive in-person training with hands-on experience and industry insights.</p>
-                <a href="/courses" className="course-link">
-                  Learn More <ArrowRight size={18} />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+            {/* ================= PARTNERS ================= */}
       <section className="partners-section">
         <div className="container">
           <div className="section-header">
-            <h2>Our Partners</h2>
-            <p>Collaborating with leading organizations to drive innovation in clinical research</p>
+            <h2>Our Brands</h2>
+            <p>
+              A vibrant portfolio of beverages trusted for their flavour, purity and quality.
+            </p>
           </div>
           <div className="partners-carousel">
             <div className="partners-track">
@@ -248,7 +167,97 @@ const HomePage = () => {
         </div>
       </section>
 
-      
+      {/* ================= CTA ================= */}
+      <section className="cta-section">
+        <div className="animated-bg cta-animated-bg">
+          <div className="cta-telescope cta-telescope-1"></div>
+          <div className="cta-telescope cta-telescope-2"></div>
+          <div className="cta-orbit cta-orbit-1"></div>
+          <div className="cta-orbit cta-orbit-2"></div>
+          <div className="cta-particle cta-particle-1"></div>
+          <div className="cta-particle cta-particle-2"></div>
+          <div className="cta-glow cta-glow-1"></div>
+          <div className="cta-glow cta-glow-2"></div>
+        </div>
+        <div className="container">
+          <div className="cta-content">
+            <h2>Ready to Stock Quality Beverages?</h2>
+            <p>
+              Join hundreds of retailers and businesses who trust us for premium soft drinks and 
+              purified water. With 12+ refreshing flavours across three flagship brands and reliable 
+              packaged drinking water options, we offer the variety your customers crave. Our commitment 
+              to strict quality control, hygienic production and consistent taste ensures every product 
+              meets the highest standards. Let's bring freshness and satisfaction to your shelves.
+            </p>
+            <a href="/contact" className="cta-button">
+              Contact Us
+              <ArrowRight size={20} />
+            </a>
+          </div>
+        </div>
+      </section>
+      {/* ================= SERVICES ================= */}
+      <AnimatedServicesSection />
+
+
+
+      {/* ================= COURSES ================= */}
+      <section className="courses-section">
+  <div className="courses-container">
+    <div className="courses-content">
+
+      <div className="courses-text">
+        <h2>Why Partner With Us?</h2>
+        <p>
+          Become a part of one of the fastest-growing beverage networks. 
+          We ensure unmatched product purity, fast delivery, strong margins, 
+          and the trusted quality your customers expect.
+        </p>
+      </div>
+
+      <div className="courses-cards">
+
+        <div className="course-card">
+          <h3>For Distributors & Dealers</h3>
+          <p>
+            Enjoy excellent profit margins, assured product availability, 
+            marketing support, and fast-moving beverage categories like 
+            water, soda, juice, and refreshing drinks.
+          </p>
+          <a href="/dealers/enquiry" className="course-link">
+            Become a Dealer <ArrowRight size={18} />
+          </a>
+        </div>
+
+        <div className="course-card">
+          <h3>For Retail Stores</h3>
+          <p>
+            Get access to top-selling products with strong daily demand, 
+            flexible restocking options, and quick doorstep delivery 
+            for your convenience stores, supermarkets, and juice points.
+          </p>
+          <a href="/retailers" className="course-link">
+            Start Retailing <ArrowRight size={18} />
+          </a>
+        </div>
+
+        <div className="course-card">
+          <h3>For Corporates & Events</h3>
+          <p>
+            Bulk supply of packaged drinking water and beverages with 
+            custom branding, premium packaging options, and reliable 
+            delivery for offices, events, hotels, and institutions.
+          </p>
+          <a href="/corporate" className="course-link">
+            Bulk Enquiry <ArrowRight size={18} />
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };

@@ -24,7 +24,7 @@
 }
 
 .footer-wave .shape-fill {
-    fill: #fdf5f7;
+    fill: #FAF4F3;
 }
 
 /* Animated bubbles in the background */
@@ -70,25 +70,17 @@
 /* Logo section styling */
 .footer-logo {
     margin-bottom: 16px;
-}
+    background-color: white;
+    border-radius: 50%;
+    padding: 30px;
+    text-align: center;
 
-.footer-logo-text {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #F5F6F5;
-    position: relative;
-    display: inline-block;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.footer-logo-text::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 40px;
-    height: 3px;
-    background-color: #DBE4EE;
-    border-radius: 2px;
+    width: 160px; /* Example: Match to your desired circle size */
+    height: 120px;
 }
 
 .footer-tagline {

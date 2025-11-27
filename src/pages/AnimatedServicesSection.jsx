@@ -1,41 +1,41 @@
 import React from 'react';
-import { ArrowRight, FileText, Microscope, Globe, Building } from 'lucide-react';
+import {  Droplets, Package, Truck } from 'lucide-react';
 import '../styles/HomePage.css';
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: <Microscope className="service-icon" />,
-      title: "Clinical Trial Management",
-      description: "Comprehensive design and execution of clinical trials with a focus on patient safety and data integrity.",
-      link: "/services/trial-management"
+      icon: <Droplets className="service-icon" />,
+      title: "Premium Soft Drinks",
+      description: "Wide variety of refreshing flavours across Aslee, Tizzo and Dhool brands - from fruity to fizzy classics.",
+      link: "/services/soft-drinks"
     },
     {
-      icon: <FileText className="service-icon" />,
-      title: "Medical Writing",
-      description: "Expert preparation of regulatory documents, protocols, and scientific publications to meet global standards.",
-      link: "/services/medical-writing"
+      icon: <Package className="service-icon" />,
+      title: "Packaged Drinking Water",
+      description: "Pure and safe drinking water under Andavar Plus and Tizzo Water, available in multiple sizes for every need.",
+      link: "/services/drinking-water"
     },
     {
-      icon: <Building className="service-icon" />,
-      title: "Site Management",
-      description: "Efficient coordination and oversight of clinical trial sites to ensure compliance and quality.",
-      link: "/services/site-management"
+      icon: <Truck className="service-icon" />,
+      title: "Bulk Distribution",
+      description: "Reliable delivery solutions for retailers, restaurants and businesses with flexible order quantities.",
+      link: "/services/distribution"
     },
-    {
-      icon: <Globe className="service-icon" />,
-      title: "Global Research Coordination",
-      description: "Seamless management of multi-regional trials with consistent quality across diverse populations.",
-      link: "/services/global-research"
-    }
+    // {
+    //   icon: <Award className="service-icon" />,
+    //   title: "Custom Solutions",
+    //   description: "Tailored beverage packages for events, corporate needs and special occasions with competitive pricing.",
+    //   link: "/services/custom-solutions"
+    // }
   ];
 
   return (
     <section className="services-section">
       <div className="container">
         <div className="section-header">
-          <h2>Our Clinical Research Services</h2>
-          <p>The clinical trial developmental process is riddled with complexity and risk, which can cost your organization significant time and money. V&S Global Solutions offers a variety of clinical research services that bring together our clinical and regulatory expertise with new technologies to simplify your journey to the market. It all begins with our integrated services in conducting clinical research including.</p>
+          <h2>What We Offer</h2>
+          <p>Finding the right beverage partner shouldn't be complicated. We offer a complete range of high-quality soft drinks and purified water that meet the diverse needs of families, businesses and retailers. From vibrant flavours to pure hydration, our products are crafted with strict quality control and hygienic production standards. Discover how our trusted brands can refresh your day and delight your customers.</p>
         </div>
         
         <div className="services-grid">
@@ -46,9 +46,6 @@ const ServicesSection = () => {
               </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <a href={service.link} className="service-link">
-                Explore More <ArrowRight size={16} />
-              </a>
             </div>
           ))}
         </div>

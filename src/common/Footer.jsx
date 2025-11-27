@@ -87,10 +87,9 @@ const Footer = () => {
                 alt="V&S Global Solutions Logo"
                 className="footer-logo-image"
               />
-              <span className="footer-logo-text">V&S Global Solutions</span>
             </div>
             <p className="footer-tagline">
-              Advancing Clinical Research For a Healthier Tomorrow
+              Where Pure Refreshment Meets Endless Flavor
             </p>
           </div>
 
@@ -98,22 +97,19 @@ const Footer = () => {
             <h3 className="footer-heading">Quick Links</h3>
             <ul className="footer-nav">
               <li><a href="/about" className="footer-link">About Us <ArrowUpRight size={14} /></a></li>
-              <li><a href="/services" className="footer-link">Services <ArrowUpRight /></a></li>
-              <li><a href="/courses" className="footer-link">Courses <ArrowUpRight size={14} /></a></li>
-              <li><a href="/therapeutic-areas" className="footer-link">Therapeutic Areas <ArrowUpRight size={14} /></a></li>
-              <li><a href="/careers" className="footer-link">Careers <ArrowUpRight size={14} /></a></li>
+              <li><a href="/services" className="footer-link">Products <ArrowUpRight /></a></li>
+              <li><a href="/courses" className="footer-link">Contact Us <ArrowUpRight size={14} /></a></li>
+              <li><a href="/therapeutic-areas" className="footer-link">Dealers Enquiry <ArrowUpRight size={14} /></a></li>
             </ul>
           </div>
 
           <div className="footer-column footer-services">
-            <h3 className="footer-heading">Our Services</h3>
+            <h3 className="footer-heading">Our Brands</h3>
             <ul className="footer-nav">
-              <li><a href="/services/site-management" className="footer-link">Site Management <ArrowUpRight size={14} /></a></li>
-              <li><a href="/services/data-management" className="footer-link">Clinical Data Management <ArrowUpRight size={14} /></a></li>
-              <li><a href="/services/trial-supplies" className="footer-link">Clinical Trial Supplies <ArrowUpRight size={14} /></a></li>
-              <li><a href="/services/medical-writing" className="footer-link">Medical Writing <ArrowUpRight size={14} /></a></li>
-              <li><a href="/services/trial-management" className="footer-link">Clinical Trial Management<ArrowUpRight size={14} /></a></li>
-              <li><a href="/services/global-research" className="footer-link">Global Research Coordination <ArrowUpRight size={14} /></a></li>
+              <li><a href="/services/site-management" className="footer-link">Andavar Plus <ArrowUpRight size={14} /></a></li>
+              <li><a href="/services/data-management" className="footer-link">Tizzo <ArrowUpRight size={14} /></a></li>
+              <li><a href="/services/trial-supplies" className="footer-link">Aslee< ArrowUpRight size={14} /></a></li>
+              <li><a href="/services/medical-writing" className="footer-link">Dhool <ArrowUpRight size={14} /></a></li>
             </ul>
           </div>
 
@@ -123,18 +119,16 @@ const Footer = () => {
               <li className="contact-item">
                 <MapPin size={16} />
                 <span>
-                  1/393/A, Veppampalayam,<br/>
-Erode, Tamil Nadu – 638012,<br/>
-India
+                  39-B, Sanjeevi Nagar,Chennai By pass Road, <br/>Tiruchirappalli, TamilNadu 620002 ,<br/>India.
                 </span>
               </li>
               <li className="contact-item">
                 <Phone size={16} />
-                <a href="tel:+18005551234">+91 9080108558</a>
+                <a href="tel:+18005551234">+91 9597909179</a>
               </li>
               <li className="contact-item">
                 <Mail size={16} />
-                <a href="mailto:v.sglobal2025@gmail.com">v.sglobal2025@gmail.com</a>
+                <a href="mailto:info@andavarplus.com">info@andavarplus.com</a>
               </li>
             </ul>
           </div>

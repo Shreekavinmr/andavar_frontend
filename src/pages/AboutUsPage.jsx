@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   Award,
@@ -11,8 +11,9 @@ import {
   Star,
   DollarSign,
   Sparkles,
-} from 'lucide-react';
-import '../styles/AboutUsPage.css';
+} from "lucide-react";
+import "../styles/AboutUsPage.css";
+import HeroSection from "./HeroSection";
 
 // Intersection Observer Hook for animations
 const useIntersectionObserver = (options = {}) => {
@@ -46,7 +47,7 @@ const SectionHeading = ({ title, subtitle }) => {
   return (
     <div
       ref={ref}
-      className={`section-header ${isVisible ? 'animate-fade-in' : ''}`}
+      className={`section-header ${isVisible ? "animate-fade-in" : ""}`}
     >
       <h2>{title}</h2>
       <div className="heading-underline"></div>
@@ -134,7 +135,7 @@ const ChooseUsCard = ({ icon, title, description }) => {
   return (
     <div
       ref={ref}
-      className={`choose-us-card ${isVisible ? 'card-visible' : ''}`}
+      className={`choose-us-card ${isVisible ? "card-visible" : ""}`}
     >
       <div className="card-icon">{icon}</div>
       <h3>{title}</h3>
@@ -166,7 +167,9 @@ const ChooseUsCard = ({ icon, title, description }) => {
 
 // Main About Us Page Component
 const AboutUsPage = () => {
-  const [missionRef, missionVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const [missionRef, missionVisible] = useIntersectionObserver({
+    threshold: 0.1,
+  });
 
   // const teamMembers = [
   //   {
@@ -190,73 +193,61 @@ const AboutUsPage = () => {
   //     image: "/assets/images/leader_5.jpg",
   //   },
   // ];
-
+  const stats = [
+    { number: "12+", label: "Unique Flavours" },
+    { number: "3", label: "Premium Brands" },
+    { number: "15+", label: "Years of Excellence" },
+    { number: "100%", label: "Customer Satisfaction" },
+  ];
   const whyChooseUs = [
     {
       icon: <Star size={36} />,
-      title: "Uniquely Capable",
-      description: "We offer the full spectrum of clinical trial services in one package. We are a team with an exceptional mix of technical and research knowledge.",
+      title: "Unmatched Product Quality",
+      description:
+        "Every bottle we produce — from drinking water to our beverage line — goes through strict purification, filtration, and quality control to ensure consistent safety, purity, and great taste.",
     },
     {
       icon: <Briefcase size={36} />,
-      title: "Comprehensive project management",
-      description: "We are experienced in managing all types of complex trials. Every trial is systematically managed and coordinated to achieve the study goals.",
+      title: "Strong Distribution & Logistics",
+      description:
+        "With a reliable supply chain, fast delivery systems, and a growing distribution network, we ensure uninterrupted availability for dealers, retailers, and business partners.",
     },
     {
       icon: <Award size={36} />,
-      title: "Committed to quality",
-      description: "We do not settle for anything but the best, and neither should you when it comes to research. We've worked hard to find the best ways to provide the quality services.",
+      title: "Certified Production Standards",
+      description:
+        "Our manufacturing units follow certified hygiene and safety standards with advanced technology, ensuring every product meets the highest industry benchmarks.",
     },
     {
       icon: <Users size={36} />,
-      title: "Extensive investigator network",
-      description: "Specialized researchers with decades of combined experience. We have created a multi-site, committed investigator network to fulfill the study/sponsor requirements which catalyze trials and pave the way for drug development.",
+      title: "Trusted by Thousands",
+      description:
+        "From households to local shops, corporate clients, and retailers — our brand is trusted for its consistency, reliability, and purity across all product categories.",
     },
     {
       icon: <DollarSign size={36} />,
-      title: "Flexible and Cost effective",
-      description: "We are responsive, flexible and adapt as your research needs change, with a speed and cost-effectiveness that the other SMO’s can't match.",
+      title: "Dealer-Friendly Pricing",
+      description:
+        "We provide competitive pricing, flexible order quantities, and excellent margins that support long-term growth for distributors and retailers.",
     },
     {
       icon: <Sparkles size={36} />,
-      title: "Your dreams, Our challenge",
-      description: "We are committed to fulfilling your dreams through quality services and we always take up these challenges to make people’s lives better.",
+      title: "Innovation in Every Sip",
+      description:
+        "From refreshing sodas and fruit drinks to energy beverages, we continuously innovate to create products that customers love — refreshing, flavorful, and quality-driven.",
     },
+  ];
+  const partners = [
+    { name: "Dhool", logo: "/assets/images/logo3.png" },
+    { name: "Tizzo", logo: "/assets/images/logo1.png" },
+    { name: "Andavar Plus", logo: "/assets/images/logo.png" },
+    { name: "Aslee", logo: "/assets/images/logo4.png" },
   ];
 
   return (
     <div className="about-us-page">
       {/* Hero Section (Copied from CoursesPage) */}
-      <section className="hero-section">
-        <div className="shape shape-1"></div>
-        <div className="shape shape-2"></div>
-        <div className="dots-pattern dots-1"></div>
-        <div className="dots-pattern dots-2"></div>
-        <div className="container">
-          <div className="hero-content">
-            <div className="hero-badge">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-              </svg>
-              About V&S Global Solutions
-            </div>
-            <h1>Your Partner in Clinical Research Success</h1>
-            <p>
-              V&S Global Solutions is a trusted leader in clinical research, delivering comprehensive services including site management, clinical data management, clinical trial supplies, medical writing, and biostatistics. We empower professionals and organizations with innovative solutions and expertise to drive impactful healthcare advancements globally.
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroSection stats={stats} />
 
       {/* Mission and Vision Section */}
       <section className="mission-section">
@@ -264,22 +255,33 @@ const AboutUsPage = () => {
         <div className="container">
           <SectionHeading
             title="Our Mission & Vision"
-            subtitle="Driving innovation and excellence in global clinical research"
+            subtitle="Delivering purity, freshness, and trust in every bottle"
           />
+
           <div
             ref={missionRef}
-            className={`mission-content ${missionVisible ? 'mission-visible' : ''}`}
+            className={`mission-content ${
+              missionVisible ? "mission-visible" : ""
+            }`}
           >
             <div className="mission-card">
               <h3>Our Mission</h3>
               <p>
-                To build strategic partnerships with selected sponsors and CROs, provide high-quality services to the healthcare industry in clinical research, and deliver quality therapeutics to improve human lives.
+                To provide safe, hygienic, and high-quality packaged drinking
+                water and beverages that meet international standards. We aim to
+                serve families, retailers, and partners with consistent purity,
+                exceptional taste, and reliable service while continuously
+                improving our production practices.
               </p>
             </div>
+
             <div className="mission-card">
               <h3>Our Vision</h3>
               <p>
-                To advance clinical research with innovation and empirical leadership to improve global health.
+                To become a leading and most trusted beverage brand across India
+                by innovating refreshing products, expanding our distribution
+                network, and upholding a commitment to sustainability, customer
+                satisfaction, and world-class quality in everything we deliver.
               </p>
             </div>
           </div>
@@ -298,7 +300,6 @@ const AboutUsPage = () => {
         </div>
       </section> */}
 
-
       {/* CTA Section */}
       <section className="cta-section">
         <div className="animated-bg cta-animated-bg">
@@ -311,17 +312,21 @@ const AboutUsPage = () => {
           <div className="cta-glow cta-glow-1"></div>
           <div className="cta-glow cta-glow-2"></div>
         </div>
+
         <div className="container">
           <div className="cta-content">
-            <h3>Partner with Us for Cutting-Edge Research</h3>
+            <h3>Let's Build Refreshing Partnerships Together</h3>
             <p>
-              At V&S Global Solutions, we specialize in transforming complex clinical challenges into breakthrough solutions.
-              Our team of expert researchers and state-of-the-art methodologies ensure every project is handled with scientific
-              precision and ethical integrity. From early-phase trials to regulatory submissions, we help you navigate the path
-              to successful outcomes — faster and smarter.
+              At Andavar Beverages, we are committed to delivering purity,
+              quality, and great taste across our entire range — from packaged
+              drinking water to our refreshing beverages like Aslee, Dhool, and
+              Tizzo. Whether you are a distributor, retailer, or business
+              partner, we ensure consistent supply, strong brand value, and
+              long-term reliability. Join hands with us and bring trusted
+              hydration and refreshment to more customers every day.
             </p>
             <a href="/contact" className="cta-button">
-              Start Your Project
+              Contact Us
               <ArrowRight size={20} />
             </a>
           </div>
@@ -369,6 +374,26 @@ const AboutUsPage = () => {
           </div>
         </div>
       </section> */}
+      
+       <section className="partners-section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Our Brands</h2>
+            <p>
+              A vibrant portfolio of beverages trusted for their flavour, purity and quality.
+            </p>
+          </div>
+          <div className="partners-carousel">
+            <div className="partners-track">
+              {partners.concat(partners).map((partner, index) => (
+                <div key={index} className="partner-logo">
+                  <img src={partner.logo} alt={`${partner.name} logo`} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
