@@ -296,7 +296,7 @@ const ProductsPage = () => {
       <HeroSection stats={stats} />
 
       {/* Overall Product Banner */}
-      <section style={styles.overallBanner}>
+      {/* <section style={styles.overallBanner}>
         <div style={styles.container}>
           <div style={styles.bannerContent}>
             <img 
@@ -317,7 +317,7 @@ const ProductsPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Brand Navigation */}
       <section id="brands-nav" style={styles.brandsNav}>
