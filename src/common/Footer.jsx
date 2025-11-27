@@ -84,7 +84,7 @@ const Footer = () => {
             <div className="footer-logo">
               <img
                 src="/assets/images/logo.png"
-                alt="V&S Global Solutions Logo"
+                alt="Logo"
                 className="footer-logo-image"
               />
             </div>

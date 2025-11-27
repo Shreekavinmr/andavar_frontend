@@ -1,7 +1,7 @@
 const { SitemapStream, streamToPromise } = require('sitemap');
 const { createWriteStream } = require('fs');
 
-const hostname = 'https://www.vandsglobalsolutions.com'; // Replace with your domain
+// const hostname = 'https://www.vandsglobalsolutions.com'; // Replace with your domain
 
 const links = [
   { url: '/', changefreq: 'daily', priority: 1.0 },
