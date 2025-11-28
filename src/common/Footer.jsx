@@ -119,7 +119,7 @@ const Footer = () => {
               <li className="contact-item">
                 <MapPin size={16} />
                 <span>
-                  39-B, Sanjeevi Nagar,Chennai By pass Road, <br/>Tiruchirappalli, TamilNadu 620002 ,<br/>India.
+                  39-B, Sanjeevi Nagar,<br/> Chennai By pass Road, <br/>Tiruchirappalli, TamilNadu 620002,<br/>India.
                 </span>
               </li>
               <li className="contact-item">
