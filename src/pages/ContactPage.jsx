@@ -112,7 +112,7 @@ const ContactPage = () => {
               </div>
               <h3>Phone</h3>
               <p>
-                <a href="tel:+919597909179">+91 9597909179</a>
+                <a href="tel:+919360308145">+91 9360308145 / +91 9865653254</a>
               </p>
             </div>
             <div className="contact-info-card">

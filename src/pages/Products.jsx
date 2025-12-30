@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import HeroSection from "./HeroSection";
+import '../styles/Products.css';
 
 // Intersection Observer Hook
 const useIntersectionObserver = (options = {}) => {
@@ -150,68 +151,86 @@ const brandData = [
 // Image Gallery Component
 const ImageGallery = ({ images, brandColor, isMobile }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const nextSlide = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentIndex((prev) => (prev + 1) % images.length);
+    setTimeout(() => setIsTransitioning(false), 300);
   };
 
   const prevSlide = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    setTimeout(() => setIsTransitioning(false), 300);
+  };
+
+  const goToSlide = (index) => {
+    if (isTransitioning || index === currentIndex) return;
+    setIsTransitioning(true);
+    setCurrentIndex(index);
+    setTimeout(() => setIsTransitioning(false), 300);
   };
 
   return (
-    <div style={styles.galleryContainer}>
-      <div style={{
-        ...styles.mainImageWrapper,
-        ...(isMobile && { height: '350px' })
-      }}>
-        <img
-          src={images[currentIndex]}
-          alt={`Product ${currentIndex + 1}`}
-          style={styles.mainImage}
-        />
-        <div style={styles.imageOverlay} />
+    <div className="gallery-container">
+      <div className={`main-image-wrapper ${isMobile ? 'mobile' : ''}`}>
+        {images.map((img, idx) => (
+          <img
+            key={idx}
+            src={img}
+            alt={`Product ${idx + 1}`}
+            className="slide-image"
+            style={{
+              opacity: idx === currentIndex ? 1 : 0,
+              zIndex: idx === currentIndex ? 1 : 0,
+            }}
+          />
+        ))}
+        <div className="image-overlay" />
         
-        <button
-          onClick={prevSlide}
-          style={{
-            ...styles.navButton, 
-            ...styles.navButtonLeft,
-            ...(isMobile && { width: '36px', height: '36px' })
-          }}
-          aria-label="Previous image"
-        >
-          <ChevronLeft size={isMobile ? 20 : 24} />
-        </button>
-        
-        <button
-          onClick={nextSlide}
-          style={{
-            ...styles.navButton, 
-            ...styles.navButtonRight,
-            ...(isMobile && { width: '36px', height: '36px' })
-          }}
-          aria-label="Next image"
-        >
-          <ChevronRight size={isMobile ? 20 : 24} />
-        </button>
-
-        <div style={styles.dotsContainer}>
-          {images.map((_, idx) => (
+        {images.length > 1 && (
+          <>
             <button
-              key={idx}
-              onClick={() => setCurrentIndex(idx)}
-              style={{
-                ...styles.dot,
-                backgroundColor: idx === currentIndex ? brandColor : 'rgba(255,255,255,0.5)',
-              }}
-              aria-label={`Go to image ${idx + 1}`}
-            />
-          ))}
-        </div>
+              onClick={prevSlide}
+              disabled={isTransitioning}
+              className={`nav-button nav-button-left ${isMobile ? 'mobile' : ''}`}
+              style={{ opacity: isTransitioning ? 0.5 : 1 }}
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={isMobile ? 20 : 24} />
+            </button>
+            
+            <button
+              onClick={nextSlide}
+              disabled={isTransitioning}
+              className={`nav-button nav-button-right ${isMobile ? 'mobile' : ''}`}
+              style={{ opacity: isTransitioning ? 0.5 : 1 }}
+              aria-label="Next image"
+            >
+              <ChevronRight size={isMobile ? 20 : 24} />
+            </button>
+
+            <div className="dots-container">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => goToSlide(idx)}
+                  disabled={isTransitioning}
+                  className="dot"
+                  style={{
+                    backgroundColor: idx === currentIndex ? brandColor : 'rgba(255,255,255,0.5)',
+                    width: idx === currentIndex ? '24px' : '10px',
+                  }}
+                  aria-label={`Go to image ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </>
+        )}
       </div>
-
-
     </div>
   );
 };
@@ -224,45 +243,29 @@ const BrandSection = ({ brand, index, isMobile }) => {
     <section
       id={brand.id}
       ref={ref}
-      style={{
-        ...styles.brandSection,
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
-        backgroundColor: index % 2 === 0 ? '#ffffff' : '#faf6f4',
-      }}
+      className={`brand-section ${isVisible ? 'visible' : ''} ${index % 2 === 0 ? 'even' : 'odd'}`}
     >
-      <div style={styles.container}>
-        <div style={{
-          ...styles.brandLayout,
-          ...(isMobile && { gridTemplateColumns: '1fr', gap: '32px' })
-        }}>
-          <div style={{
-            ...styles.brandInfo,
-            ...(isMobile && { position: 'static' })
-          }}>
-            <span style={{...styles.brandPill, backgroundColor: brand.color + '20', color: brand.color}}>
-              {brand.segment}
-            </span>
-            <h2 style={{
-              ...styles.brandTitle,
-              ...(isMobile && { fontSize: '1.8rem' })
-            }}>{brand.brand}</h2>
-            <p style={styles.brandDescription}>{brand.description}</p>
+      <div className="container">
+        <div className={`brand-layout ${isMobile ? 'mobile' : ''}`}>
+          <div className={`brand-info ${isMobile ? 'mobile' : ''}`}>
+            <span className="brand-pill">{brand.segment}</span>
+            <h2 className={`brand-title ${isMobile ? 'mobile' : ''}`}>{brand.brand}</h2>
+            <p className="brand-description">{brand.description}</p>
             
-            <div style={styles.variantsInfo}>
-              <h3 style={styles.variantsTitle}>Available Variants ({brand.variants.length})</h3>
-              <div style={styles.variantsGrid}>
+            <div className="variants-info">
+              <h3 className="variants-title">Available Variants ({brand.variants.length})</h3>
+              <div className="variants-grid">
                 {brand.variants.map((variant, idx) => (
-                  <div key={idx} style={styles.variantCard}>
-                    <div style={styles.variantSize}>{variant.size}</div>
-                    <div style={styles.variantName}>{variant.name}</div>
+                  <div key={idx} className="variant-card">
+                    <div className="variant-size">{variant.size}</div>
+                    <div className="variant-name">{variant.name}</div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          <div style={styles.brandGallery}>
+          <div className="brand-gallery">
             <ImageGallery images={brand.images} brandColor={brand.color} isMobile={isMobile} />
           </div>
         </div>
@@ -291,57 +294,30 @@ const ProductsPage = () => {
   ];
 
   return (
-    <div style={styles.page}>
+    <div className="products-page">
       {/* Hero Section */}
       <HeroSection stats={stats} />
 
-      {/* Overall Product Banner */}
-      {/* <section style={styles.overallBanner}>
-        <div style={styles.container}>
-          <div style={styles.bannerContent}>
-            <img 
-              src="/assets/images/all-products-banner.jpg" 
-              alt="All Products" 
-              style={styles.bannerImage}
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextElementSibling.style.display = 'flex';
-              }}
-            />
-            <div style={styles.bannerFallback}>
-              <h2 style={{
-                ...styles.bannerFallbackTitle,
-                ...(isMobile && { fontSize: '1.8rem' })
-              }}>Our Complete Product Range</h2>
-              <p style={styles.bannerFallbackText}>Discover quality beverages across all our premium brands</p>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Brand Navigation */}
-      <section id="brands-nav" style={styles.brandsNav}>
-        <div style={styles.container}>
-          <div style={{
-            ...styles.brandsNavGrid,
-            ...(isMobile && { gridTemplateColumns: '1fr' })
-          }}>
+      <section id="brands-nav" className="brands-nav-section">
+        <div className="container">
+          <div className={`brands-nav ${isMobile ? 'mobile' : ''}`}>
             {brandData.map((brand) => (
               <a
                 key={brand.id}
                 href={`#${brand.id}`}
-                style={styles.brandChip}
+                className="brand-chip"
               >
-                <div style={styles.brandChipLogoWrapper}>
+                <div className="brand-chip-logo-wrapper">
                   <img
                     src={brand.logo}
                     alt={brand.brand}
-                    style={styles.brandChipLogo}
+                    className="brand-chip-logo"
                   />
                 </div>
                 <div>
-                  <div style={styles.brandChipName}>{brand.brand}</div>
-                  <div style={styles.brandChipSegment}>{brand.segment}</div>
+                  <div className="brand-chip-name">{brand.brand}</div>
+                  <div className="brand-chip-segment">{brand.segment}</div>
                 </div>
               </a>
             ))}
@@ -353,435 +329,8 @@ const ProductsPage = () => {
       {brandData.map((brand, index) => (
         <BrandSection key={brand.id} brand={brand} index={index} isMobile={isMobile} />
       ))}
-
     </div>
   );
-};
-
-const styles = {
-  page: {
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    color: '#1a2140',
-    background: '#fff',
-    overflowX: 'hidden',
-  },
-  container: {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 24px',
-  },
-  
-  // Overall Banner
-  overallBanner: {
-    padding: '40px 0',
-    background: '#fff',
-  },
-  bannerContent: {
-    position: 'relative',
-    width: '100%',
-    borderRadius: '20px',
-    overflow: 'hidden',
-    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
-  },
-  bannerImage: {
-    width: '100%',
-    height: 'auto',
-    display: 'block',
-    minHeight: '300px',
-    objectFit: 'cover',
-  },
-  bannerFallback: {
-    display: 'none',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '80px 40px',
-    background: 'linear-gradient(135deg, #26306a 0%, #1e2755 100%)',
-    color: '#fff',
-    textAlign: 'center',
-    minHeight: '300px',
-  },
-  bannerFallbackTitle: {
-    fontSize: '2.5rem',
-    fontWeight: 700,
-    marginBottom: '16px',
-  },
-  bannerFallbackText: {
-    fontSize: '1.2rem',
-    opacity: 0.9,
-  },
-  
-  // Hero
-  hero: {
-    position: 'relative',
-    minHeight: '70vh',
-    display: 'flex',
-    alignItems: 'center',
-    background: 'linear-gradient(135deg, #26306a 0%, #1e2755 100%)',
-    padding: '80px 0',
-  },
-  heroOverlay: {
-    position: 'absolute',
-    inset: 0,
-    background: 'radial-gradient(circle at 30% 50%, rgba(242, 109, 37, 0.1) 0%, transparent 50%)',
-  },
-  heroContent: {
-    maxWidth: '700px',
-    color: '#fff',
-  },
-  heroTag: {
-    display: 'inline-block',
-    padding: '8px 16px',
-    borderRadius: '999px',
-    fontSize: '13px',
-    textTransform: 'uppercase',
-    letterSpacing: '0.1em',
-    background: 'rgba(255, 255, 255, 0.1)',
-    border: '1px solid rgba(255, 255, 255, 0.2)',
-    marginBottom: '20px',
-  },
-  heroTitle: {
-    fontSize: '3rem',
-    lineHeight: 1.2,
-    marginBottom: '16px',
-    fontWeight: 700,
-  },
-  heroText: {
-    fontSize: '1.1rem',
-    opacity: 0.9,
-    marginBottom: '32px',
-    lineHeight: 1.6,
-  },
-  statsGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
-    gap: '16px',
-    marginBottom: '32px',
-  },
-  statCard: {
-    display: 'flex',
-    flexDirection: 'column',
-    padding: '16px',
-    background: 'rgba(255, 255, 255, 0.1)',
-    borderRadius: '12px',
-    backdropFilter: 'blur(10px)',
-  },
-  statNumber: {
-    fontSize: '1.8rem',
-    fontWeight: 700,
-    marginBottom: '4px',
-  },
-  statLabel: {
-    fontSize: '0.85rem',
-    opacity: 0.8,
-  },
-  heroActions: {
-    display: 'flex',
-    gap: '12px',
-    flexWrap: 'wrap',
-  },
-  btnPrimary: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: '8px',
-    padding: '12px 24px',
-    borderRadius: '999px',
-    background: '#f26d25',
-    color: '#fff',
-    textDecoration: 'none',
-    fontWeight: 600,
-    fontSize: '15px',
-    transition: 'all 0.3s ease',
-    border: 'none',
-    cursor: 'pointer',
-  },
-  btnSecondary: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: '8px',
-    padding: '12px 24px',
-    borderRadius: '999px',
-    background: 'transparent',
-    color: '#fff',
-    textDecoration: 'none',
-    fontWeight: 600,
-    fontSize: '15px',
-    border: '1px solid rgba(255, 255, 255, 0.5)',
-    transition: 'all 0.3s ease',
-    cursor: 'pointer',
-  },
-  
-  // Brand Nav
-  brandsNav: {
-    padding: '32px 0',
-    background: '#f9f5f3',
-    borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
-  },
-  brandsNavGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-    gap: '16px',
-  },
-  brandChipColor: {
-    width: '40px',
-    height: '40px',
-    borderRadius: '8px',
-    flexShrink: 0,
-  },
-  brandChipName: {
-    fontSize: '1rem',
-    fontWeight: 700,
-    color: '#26306a',
-  },
-  brandChipSegment: {
-    fontSize: '0.85rem',
-    color: '#6c759a',
-  },
-  
-  // Brand Section
-  brandSection: {
-    padding: '80px 0',
-    transition: 'all 0.7s ease',
-  },
-  brandLayout: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1.3fr',
-    gap: '48px',
-    alignItems: 'start',
-  },
-  brandInfo: {
-    position: 'sticky',
-    top: '100px',
-  },
-  brandPill: {
-    display: 'inline-block',
-    padding: '6px 14px',
-    borderRadius: '999px',
-    fontSize: '13px',
-    textTransform: 'uppercase',
-    letterSpacing: '0.1em',
-    fontWeight: 600,
-    marginBottom: '16px',
-  },
-  brandTitle: {
-    fontSize: '2.5rem',
-    fontWeight: 700,
-    color: '#26306a',
-    marginBottom: '12px',
-  },
-  brandDescription: {
-    fontSize: '1.1rem',
-    color: '#6c759a',
-    lineHeight: 1.6,
-    marginBottom: '32px',
-  },
-  variantsInfo: {
-    marginTop: '32px',
-  },
-  variantsTitle: {
-    fontSize: '1.2rem',
-    fontWeight: 700,
-    color: '#26306a',
-    marginBottom: '16px',
-  },
-  variantsGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
-    gap: '12px',
-  },
-  variantCard: {
-    padding: '12px',
-    background: '#fff',
-    borderRadius: '10px',
-    border: '1px solid rgba(38, 48, 106, 0.1)',
-    transition: 'all 0.3s ease',
-    cursor: 'pointer',
-  },
-  variantSize: {
-    fontSize: '0.75rem',
-    textTransform: 'uppercase',
-    letterSpacing: '0.1em',
-    color: '#8a90a8',
-    marginBottom: '4px',
-  },
-  variantName: {
-    fontSize: '0.95rem',
-    fontWeight: 600,
-    color: '#1a2140',
-  },
-  
-  // Gallery
-  brandGallery: {
-    width: '100%',
-  },
-  galleryContainer: {
-    width: '100%',
-    maxWidth: '700px',
-    margin: '0 auto',
-  },
-  mainImageWrapper: {
-    position: 'relative',
-    width: '100%',
-    maxWidth: '700px',
-    height: '500px',
-    borderRadius: '20px',
-    overflow: 'hidden',
-    marginBottom: '16px',
-    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
-  },
-  mainImage: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-  },
-  imageOverlay: {
-    position: 'absolute',
-    inset: 0,
-    background: 'linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%)',
-  },
-  navButton: {
-    position: 'absolute',
-    top: '50%',
-    transform: 'translateY(-50%)',
-    background: 'rgba(255, 255, 255, 0.9)',
-    border: 'none',
-    width: '48px',
-    height: '48px',
-    borderRadius: '50%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
-    zIndex: 2,
-  },
-  navButtonLeft: {
-    left: '16px',
-  },
-  navButtonRight: {
-    right: '16px',
-  },
-  dotsContainer: {
-    position: 'absolute',
-    bottom: '20px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    display: 'flex',
-    gap: '8px',
-    zIndex: 2,
-  },
-  dot: {
-    width: '10px',
-    height: '10px',
-    borderRadius: '50%',
-    border: 'none',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
-    padding: 0,
-  },
-  thumbnailsWrapper: {
-    display: 'flex',
-    gap: '12px',
-    justifyContent: 'center',
-    alignItems: 'center',
-    maxWidth: '700px',
-    margin: '0 auto',
-    padding: '8px 0',
-  },
-  thumbnail: {
-    width: '100px',
-    height: '80px',
-    borderRadius: '10px',
-    overflow: 'hidden',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
-    padding: 0,
-    background: 'none',
-    flexShrink: 0,
-  },
-  thumbnailImage: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-  },
-  moreThumbnails: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100px',
-    height: '80px',
-    borderRadius: '10px',
-    background: 'rgba(38, 48, 106, 0.1)',
-    color: '#26306a',
-    fontSize: '0.9rem',
-    fontWeight: 600,
-    flexShrink: 0,
-  },
-  brandChip: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '12px',
-    padding: '12px 16px',
-    background: '#fff',
-    borderRadius: '12px',
-    textDecoration: 'none',
-    border: '2px solid rgba(38, 48, 106, 0.08)',
-    transition: 'all 0.3s ease',
-    cursor: 'pointer',
-  },
-  brandChipLogoWrapper: {
-    width: '48px',
-    height: '48px',
-    borderRadius: '12px',
-    overflow: 'hidden',
-    background: '#f5f5f5',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexShrink: 0,
-  },
-  brandChipLogo: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'contain',
-  },
-
-  // CTA
-  cta: {
-    padding: '60px 0',
-    background: 'linear-gradient(135deg, #26306a 0%, #1e2755 100%)',
-    color: '#fff',
-  },
-  ctaContent: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    gap: '32px',
-    flexWrap: 'wrap',
-  },
-  ctaTitle: {
-    fontSize: '2rem',
-    fontWeight: 700,
-    marginBottom: '8px',
-  },
-  ctaText: {
-    fontSize: '1.1rem',
-    opacity: 0.9,
-  },
-  ctaButton: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: '8px',
-    padding: '14px 28px',
-    borderRadius: '999px',
-    background: '#f26d25',
-    color: '#fff',
-    textDecoration: 'none',
-    fontWeight: 600,
-    fontSize: '16px',
-    transition: 'all 0.3s ease',
-    whiteSpace: 'nowrap',
-  },
 };
 
 export default ProductsPage;

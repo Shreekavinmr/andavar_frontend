@@ -6,13 +6,13 @@ const HeroSection = ({ stats = [] }) => {
   // ✅ Full-width banner slides (change image paths to yours)
   const heroSlides = [
   {
+    image: '/assets/images/JULY.jpg',
+  },
+  {
     image: '/assets/images/JUNE.jpg',
   },
   {
     image: '/assets/images/JAN.jpg',
-  },
-  {
-    image: '/assets/images/OCT.jpg',
   },
   {
     image: '/assets/images/dec.jpg',
@@ -21,7 +21,7 @@ const HeroSection = ({ stats = [] }) => {
     image: '/assets/images/SEP.jpg',
   },
   {
-    image: '/assets/images/JULY.jpg',
+    image: '/assets/images/OCT.jpg',
   },
   {
     image: '/assets/images/april.jpg',

@@ -97,19 +97,19 @@ const Footer = () => {
             <h3 className="footer-heading">Quick Links</h3>
             <ul className="footer-nav">
               <li><a href="/about" className="footer-link">About Us <ArrowUpRight size={14} /></a></li>
-              <li><a href="/services" className="footer-link">Products <ArrowUpRight /></a></li>
-              <li><a href="/courses" className="footer-link">Contact Us <ArrowUpRight size={14} /></a></li>
-              <li><a href="/therapeutic-areas" className="footer-link">Dealers Enquiry <ArrowUpRight size={14} /></a></li>
+              <li><a href="/products" className="footer-link">Products <ArrowUpRight /></a></li>
+              <li><a href="/contact" className="footer-link">Contact Us <ArrowUpRight size={14} /></a></li>
+              <li><a href="/dealers/enquiry" className="footer-link">Dealers Enquiry <ArrowUpRight size={14} /></a></li>
             </ul>
           </div>
 
           <div className="footer-column footer-services">
             <h3 className="footer-heading">Our Brands</h3>
             <ul className="footer-nav">
-              <li><a href="/services/site-management" className="footer-link">Andavar Plus <ArrowUpRight size={14} /></a></li>
-              <li><a href="/services/data-management" className="footer-link">Tizzo <ArrowUpRight size={14} /></a></li>
-              <li><a href="/services/trial-supplies" className="footer-link">Aslee< ArrowUpRight size={14} /></a></li>
-              <li><a href="/services/medical-writing" className="footer-link">Dhool <ArrowUpRight size={14} /></a></li>
+              <li><a href="/products" className="footer-link">Andavar Plus <ArrowUpRight size={14} /></a></li>
+              <li><a href="/products" className="footer-link">Tizzo <ArrowUpRight size={14} /></a></li>
+              <li><a href="/products" className="footer-link">Aslee< ArrowUpRight size={14} /></a></li>
+              <li><a href="/products" className="footer-link">Dhool <ArrowUpRight size={14} /></a></li>
             </ul>
           </div>
 
@@ -124,7 +124,7 @@ const Footer = () => {
               </li>
               <li className="contact-item">
                 <Phone size={16} />
-                <a href="tel:+18005551234">+91 9597909179</a>
+                <a href="tel:+919360308145">+91 9360308145 /<br/> +91 9865653254</a>
               </li>
               <li className="contact-item">
                 <Mail size={16} />
