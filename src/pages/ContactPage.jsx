@@ -29,7 +29,7 @@ const ContactPage = () => {
     const BACKEND_URL = process.env.REACT_APP_BACKEND_URL; 
 
     try {
-      const response = await fetch(`${BACKEND_URL}/contact`, {
+      const response = await fetch(`${BACKEND_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
