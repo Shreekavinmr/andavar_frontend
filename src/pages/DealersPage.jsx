@@ -35,7 +35,7 @@ const DealersPage = () => {
     const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
     try {
-      const response = await fetch(`${BACKEND_URL}/api/dealers-enquiry`, {
+      const response = await fetch(`${BACKEND_URL}/dealers-enquiry`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
