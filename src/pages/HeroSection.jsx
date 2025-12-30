@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 import '../styles/HeroSection.css';
 
 const HeroSection = ({ stats = [] }) => {
@@ -7,34 +6,32 @@ const HeroSection = ({ stats = [] }) => {
   // ✅ Full-width banner slides (change image paths to yours)
   const heroSlides = [
   {
-    image: '/assets/images/poster_1.png',
-    title: 'Pure Hydration, Pure Trust',
-    subtitle: 'Premium Andavar packaged drinking water for every occasion.',
-    titleColor: '#e5e5e5',
+    image: '/assets/images/JUNE.jpg',
   },
   {
-    image: '/assets/images/poster_2.png',
-    title: 'The Dhool of Flavours',
-    subtitle: 'Apple, Grape, Mango, Paneer, Clear Lemon – Refreshment redefined.',
-    titleColor: '#e5e5e5',
+    image: '/assets/images/JAN.jpg',
   },
   {
-    image: '/assets/images/poster_3.png',
-    title: 'Flavours That Spark Joy',
-    subtitle: 'Aslee & Tizzo favourites – Apple, Mango & Lemonade.',
-    titleColor: '#e5e5e5',
+    image: '/assets/images/OCT.jpg',
   },
   {
-    image: '/assets/images/poster_4.png',
-    title: 'The Zest of Tizzo',
-    subtitle: 'Fresh Club Lemonade and tangy Lemon Salt Soda for every moment.',
-    titleColor: '#e5e5e5',
+    image: '/assets/images/dec.jpg',
   },
-  // {
-  //   image: '/assets/images/poster_6.png',
-  //   title: 'Taste the Zing of Every Flavour',
-  //   subtitle: 'Orange, Jeera, Grape, Mango and more in Aslee & Tizzo.',
-  // },
+  {
+    image: '/assets/images/SEP.jpg',
+  },
+  {
+    image: '/assets/images/JULY.jpg',
+  },
+  {
+    image: '/assets/images/april.jpg',
+  },
+  {
+    image: '/assets/images/NOV.jpg',
+  },
+  {
+    image: '/assets/images/may2026.jpg',
+  },
 ];
 
 
@@ -71,21 +68,6 @@ const HeroSection = ({ stats = [] }) => {
             className={slideClass}
             style={{ backgroundImage: `url(${slide.image})` }}
           >
-            <div className="container hero-container">
-              <div className="hero-content">
-                <div className="hero-badge">Flavoured Drinks &amp; Beverages</div>
-
-                <h1 style={{ color: slide.titleColor }}>{slide.title}</h1>
-                <p>{slide.subtitle}</p>
-
-                <div className="hero-buttons">
-                  <a href="/products" className="button primary-button">
-                    Explore Products
-                    <ArrowRight size={18} />
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
         );
       })}
