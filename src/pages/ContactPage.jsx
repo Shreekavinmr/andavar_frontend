@@ -23,37 +23,47 @@ const ContactPage = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setStatus('');
-    const BACKEND_URL = process.env.REACT_APP_BACKEND_URL; 
+  e.preventDefault();
+  setIsLoading(true);
+  setStatus('');
 
-    try {
-      const response = await fetch(`${BACKEND_URL}/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          secretKey: 'fghjnwri7653r2rghjebfh', 
-        }),
+  try {
+    const response = await fetch("https://formspree.io/f/mjgkwzqb", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      })
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      setStatus("Message sent successfully!");
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
       });
-
-      const result = await response.json();
-      if (response.ok) {
-        setStatus('Message sent successfully!');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        setStatus(`Error: ${result.message}`);
-      }
-    } catch (error) {
-      setStatus('Error sending message. Please try again.');
-      console.error('Submission error:', error);
-    } finally {
-      setIsLoading(false);
+    } else {
+      setStatus(result.error || "Something went wrong. Please try again.");
     }
-  };
+
+  } catch (error) {
+    console.error("Form submit error:", error);
+    setStatus("Failed to send message. Please try again.");
+  } finally {
+    setIsLoading(false);
+  }
+};
+
     const partners = [
     { name: "Dhool", logo: "/assets/images/logo3.png" },
     { name: "Tizzo", logo: "/assets/images/logo1.png" },

@@ -28,44 +28,52 @@ const DealersPage = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setStatus("");
+  e.preventDefault();
+  setIsLoading(true);
+  setStatus("");
 
-    const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+  try {
+    const response = await fetch("https://formspree.io/f/mwvpojlr", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        businessName: formData.businessName,
+        location: formData.location,
+        brands: formData.brands,
+        message: formData.message
+      })
+    });
 
-    try {
-      const response = await fetch(`${BACKEND_URL}/dealers-enquiry`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          secretKey: "andavarplus@dealer",
-        }),
+    const result = await response.json();
+
+    if (response.ok) {
+      setStatus("Your enquiry has been submitted successfully!");
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        businessName: "",
+        location: "",
+        brands: "",
+        message: ""
       });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setStatus("Your enquiry has been successfully submitted.");
-        setFormData({
-          name: "",
-          phone: "",
-          email: "",
-          businessName: "",
-          location: "",
-          brands: "",
-          message: "",
-        });
-      } else {
-        setStatus(`Error: ${result.message}`);
-      }
-    } catch (err) {
-      setStatus("Network error. Please try again.");
-    } finally {
-      setIsLoading(false);
+    } else {
+      setStatus(result.error || "Something went wrong. Please try again.");
     }
-  };
+  } catch (error) {
+    console.error("Dealer form error:", error);
+    setStatus("Network error. Please try again.");
+  } finally {
+    setIsLoading(false);
+  }
+};
+
   const partners = [
     { name: "Dhool", logo: "/assets/images/logo3.png" },
     { name: "Tizzo", logo: "/assets/images/logo1.png" },
