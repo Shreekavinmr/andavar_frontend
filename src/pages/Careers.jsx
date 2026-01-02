@@ -143,7 +143,7 @@ const CareersPage = () => {
 
 
     try {
-      const response = await fetch(`${BACKEND_URL}/api/apply`, {
+      const response = await fetch(`${BACKEND_URL}/apply`, {
         method: 'POST',
         body: formDataToSend,
       });
